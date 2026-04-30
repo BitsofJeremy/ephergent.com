@@ -3,18 +3,497 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ephergent.com</title>
+    <title>THE EPHERGENT - END OF TRANSMISSION</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=B612+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:wght@400;500;700&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
     <style>
-        body { font-family: system-ui, sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; background: #0a0a0a; color: #fff; }
-        .container { text-align: center; }
-        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-        p { color: #888; font-size: 1.1rem; }
+        :root {
+            /* Typography Scale */
+            --text-hero: clamp(3rem, 15vw, 10rem);
+            --text-display: clamp(1.5rem, 5vw, 3rem);
+            --text-body: clamp(0.9rem, 2vw, 1.1rem);
+
+            /* Colors */
+            --pink: #f12ca5;
+            --magenta: #ff00c1;
+            --cyan: #00ffff;
+            --black: #000000;
+            --white: #FFFFFF;
+            --deep-space: #0a0a12;
+
+            /* Current accent (scroll-controlled) */
+            --color-accent: var(--pink);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: var(--black);
+            font-family: 'Montserrat', sans-serif;
+            color: var(--white);
+            position: relative;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Scroll Sections */
+        .scroll-section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+        }
+
+        .hero-title {
+            font-family: 'B612 Mono', monospace;
+            font-size: var(--text-hero);
+            font-weight: 700;
+            line-height: 0.85;
+            letter-spacing: -0.03em;
+            text-transform: uppercase;
+            color: var(--white);
+            text-shadow: 0 0 40px var(--color-accent);
+            transition: text-shadow 0.5s ease, color 0.5s ease;
+        }
+
+        /* Cosmic Particles Background */
+        #cosmic-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: var(--color-accent);
+            border-radius: 50%;
+            opacity: 0;
+            animation: float 20s infinite linear;
+            transition: background 0.5s ease;
+        }
+
+        .particle:nth-child(odd) {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .particle:nth-child(3n) {
+            background: rgba(241, 44, 165, 0.4);
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+            10%, 90% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Image Section */
+        .image-section {
+            text-align: center;
+        }
+
+        .image-container {
+            position: relative;
+            margin-bottom: 3rem;
+            max-width: 90vw;
+            max-height: 70vh;
+        }
+
+        .main-image {
+            width: 150px;
+            height: 150px;
+            display: block;
+            border: 2px solid var(--color-accent);
+            box-shadow:
+                5px 5px 0 var(--color-accent),
+                10px 10px 0 rgba(241, 44, 165, 0.3),
+                0 0 30px rgba(241, 44, 165, 0.5);
+            transition: border-color 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        /* Glitch Effect on Image */
+        .glitch-image {
+            position: relative;
+            display: inline-block;
+        }
+
+        .glitch-image::before,
+        .glitch-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: inherit;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+        }
+
+        .glitch-image.active::before {
+            animation: glitch-image-1 0.3s;
+            clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+            transform: translate(-5px, 0);
+            opacity: 0.8;
+        }
+
+        .glitch-image.active::after {
+            animation: glitch-image-2 0.3s;
+            clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+            transform: translate(5px, 0);
+            opacity: 0.8;
+        }
+
+        @keyframes glitch-image-1 {
+            0%, 100% {
+                transform: translate(0, 0);
+                opacity: 0;
+            }
+            33% {
+                transform: translate(-5px, 2px);
+                opacity: 0.8;
+            }
+            66% {
+                transform: translate(5px, -2px);
+                opacity: 0.8;
+            }
+        }
+
+        @keyframes glitch-image-2 {
+            0%, 100% {
+                transform: translate(0, 0);
+                opacity: 0;
+            }
+            33% {
+                transform: translate(5px, -2px);
+                opacity: 0.8;
+            }
+            66% {
+                transform: translate(-5px, 2px);
+                opacity: 0.8;
+            }
+        }
+
+        /* Text Glitch Effect */
+        .glitch-text {
+            position: relative;
+            display: inline-block;
+            font-family: 'B612 Mono', monospace;
+            font-size: var(--text-display);
+            font-weight: 700;
+            color: var(--color-accent);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            text-align: center;
+            text-shadow: 0 0 20px rgba(241, 44, 165, 0.8);
+            transition: color 0.5s ease, text-shadow 0.5s ease;
+        }
+
+        .glitch-text::before,
+        .glitch-text::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .glitch-text::before {
+            animation: glitch-1 2.5s infinite;
+            color: var(--magenta);
+            z-index: -1;
+        }
+
+        .glitch-text::after {
+            animation: glitch-2 2.5s infinite;
+            color: var(--cyan);
+            z-index: -2;
+        }
+
+        @keyframes glitch-1 {
+            0%, 14%, 16%, 49%, 51%, 99%, 100% {
+                transform: none;
+                opacity: 0;
+            }
+            15% {
+                transform: translate(-3px, -1px) skewX(5deg);
+                opacity: 0.7;
+            }
+            50% {
+                transform: translate(3px, 1px) skewX(5deg);
+                opacity: 0.7;
+            }
+        }
+
+        @keyframes glitch-2 {
+            0%, 20%, 22%, 62%, 64%, 99%, 100% {
+                transform: none;
+                opacity: 0;
+            }
+            21% {
+                transform: translate(3px, 2px) skewX(-5deg);
+                opacity: 0.7;
+            }
+            63% {
+                transform: translate(-3px, -2px) skewX(-5deg);
+                opacity: 0.7;
+            }
+        }
+
+        /* Subtitle */
+        .subtitle {
+            font-family: 'Courier Prime', monospace;
+            font-size: var(--text-body);
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            margin-top: 1rem;
+            letter-spacing: 0.05em;
+        }
+
+        /* Scanline Effect */
+        .scanline {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                to bottom,
+                transparent 50%,
+                rgba(241, 44, 165, 0.02) 50%
+            );
+            background-size: 100% 4px;
+            pointer-events: none;
+            z-index: 100;
+            opacity: 0.5;
+            animation: scanline 8s linear infinite;
+        }
+
+        @keyframes scanline {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(4px);
+            }
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .glitch-text {
+                font-size: 1rem;
+            }
+
+            .subtitle {
+                font-size: 0.9rem;
+            }
+
+            .main-image {
+                width: 120px;
+                height: 120px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .glitch-text {
+                font-size: 0.9rem;
+            }
+
+            .subtitle {
+                font-size: 0.8rem;
+            }
+
+            .main-image {
+                width: 100px;
+                height: 100px;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>ephergent.com</h1>
-        <p>Coming soon.</p>
-    </div>
+    <!-- Cosmic Particles Container -->
+    <div id="cosmic-particles"></div>
+
+    <!-- Scanline Effect -->
+    <div class="scanline"></div>
+
+    <!-- Hero Section -->
+    <section class="scroll-section hero" id="hero">
+        <h1 class="hero-title">THE<br>EPHERGENT</h1>
+    </section>
+
+    <!-- Image + Text Section -->
+    <section class="scroll-section image-section" id="transmission">
+        <div class="image-container">
+            <div class="glitch-image" id="glitchImage">
+                <img src="profile.png" alt="The Ephergent" class="main-image" id="mainImage">
+            </div>
+        </div>
+        <h1 class="glitch-text" data-text="END OF TRANSMISSION">&lt;END OF TRANSMISSION&gt;</h1>
+        <p class="subtitle">Scroll to alter reality</p>
+    </section>
+
+    <script>
+        // Initialize cosmic particles
+        document.addEventListener('DOMContentLoaded', function() {
+            const particleContainer = document.getElementById('cosmic-particles');
+            const particleCount = 50;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + 'vw';
+                particle.style.top = Math.random() * 100 + 'vh';
+                particle.style.animationDuration = (Math.random() * 15 + 10) + 's';
+                particle.style.animationDelay = (Math.random() * 10) + 's';
+                particleContainer.appendChild(particle);
+            }
+        });
+
+        // Random glitch effect on image
+        function triggerGlitch() {
+            const glitchImage = document.getElementById('glitchImage');
+            glitchImage.classList.add('active');
+
+            setTimeout(() => {
+                glitchImage.classList.remove('active');
+            }, 300);
+
+            const nextGlitch = Math.random() * 6000 + 2000;
+            setTimeout(triggerGlitch, nextGlitch);
+        }
+
+        setTimeout(triggerGlitch, 2000);
+
+        // Add random screen flash effect
+        function screenFlash() {
+            const body = document.body;
+            const originalBg = getComputedStyle(body).backgroundColor;
+            body.style.backgroundColor = 'rgba(241, 44, 165, 0.1)';
+
+            setTimeout(() => {
+                body.style.backgroundColor = originalBg;
+            }, 50);
+
+            const nextFlash = Math.random() * 20000 + 10000;
+            setTimeout(screenFlash, nextFlash);
+        }
+
+        setTimeout(screenFlash, 5000);
+
+        // RGB split effect on random occasions
+        function rgbSplit() {
+            const mainImage = document.getElementById('mainImage');
+            mainImage.style.filter = 'hue-rotate(180deg) saturate(3)';
+
+            setTimeout(() => {
+                mainImage.style.filter = 'none';
+            }, 100);
+
+            const nextSplit = Math.random() * 10000 + 5000;
+            setTimeout(rgbSplit, nextSplit);
+        }
+
+        setTimeout(rgbSplit, 3000);
+
+        // ===== SCROLL COLOR TRANSITION CONTROLLER =====
+        // Layers scroll-triggered color transitions on top of existing glitch effects
+        class ScrollColorController {
+            constructor() {
+                this.sections = [
+                    {
+                        id: 'hero',
+                        colors: {
+                            bg: '#000000',
+                            accent: '#f12ca5',      // Pink
+                            text: '#ffffff'
+                        }
+                    },
+                    {
+                        id: 'transmission',
+                        colors: {
+                            bg: '#0a0a12',          // Deep space
+                            accent: '#ff00c1',      // Magenta
+                            text: '#ffffff'
+                        }
+                    }
+                ];
+                this.init();
+            }
+
+            init() {
+                const options = {
+                    root: null,
+                    rootMargin: '0px',
+                    threshold: 0.5
+                };
+
+                this.observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const sectionId = entry.target.id;
+                            const sectionIndex = this.sections.findIndex(s => s.id === sectionId);
+                            if (sectionIndex !== -1) {
+                                this.applyColors(sectionIndex);
+                            }
+                        }
+                    });
+                }, options);
+
+                this.sections.forEach(section => {
+                    const el = document.getElementById(section.id);
+                    if (el) this.observer.observe(el);
+                });
+            }
+
+            applyColors(index) {
+                const { colors } = this.sections[index];
+                document.documentElement.style.setProperty('--color-accent', colors.accent);
+                document.body.style.backgroundColor = colors.bg;
+            }
+        }
+
+        // Initialize scroll controller
+        document.addEventListener('DOMContentLoaded', () => {
+            new ScrollColorController();
+        });
+    </script>
 </body>
 </html>
