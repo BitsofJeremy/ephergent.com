@@ -1,113 +1,464 @@
-<!DOCTYPE html><html lang="en" class="bg-bg-deep"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v5.17.3"><title> | Ephergent</title><meta name="description" content="Ephergent  a sci-fi universe told through playable games. Board the ship."><link rel="canonical" href="https://ephergent.com/transmissions/S01E01_the_day_the_dial_broke/"><!-- Open Graph --><meta property="og:type" content="website"><meta property="og:url" content="https://ephergent.com/transmissions/S01E01_the_day_the_dial_broke/"><meta property="og:title" content="undefined | Ephergent"><meta property="og:description" content="Ephergent  a sci-fi universe told through playable games. Board the ship."><meta property="og:image" content="/images/og-default.jpg"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@BitsofJeremy"><!-- Fonts --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_astro/_slug_.ByincVgP.css">
+<!DOCTYPE html><html lang="en" class="bg-bg-deep"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v5.17.3"><title>The Day the Dial Broke | Ephergent</title><meta name="description" content="S01E01 — Pixel Paradox was a data analyst who filed forms she didn't understand. Then reality broke. First transmission from The Ephergent."><link rel="canonical" href="https://ephergent.com/transmissions/S01E01_the_day_the_dial_broke/"><!-- Open Graph --><meta property="og:type" content="website"><meta property="og:url" content="https://ephergent.com/transmissions/S01E01_the_day_the_dial_broke/"><meta property="og:title" content="The Day the Dial Broke"><meta property="og:description" content="S01E01 — Pixel Paradox was a data analyst who filed forms she didn't understand. Then reality broke."><meta property="og:image" content="/images/og-default.jpg"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@BitsofJeremy"><!-- Fonts --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,600&family=Lora:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_astro/_slug_.ByincVgP.css">
 <style>
-.reading-container{max-width:680px;margin:0 auto;padding:2rem 1.5rem 4rem}
-.episode-locked .locked-notice{text-align:center;padding:4rem 2rem}
-.locked-icon{font-size:3rem;color:#ffb020;margin-bottom:1rem}
-.locked-label{font-size:.75rem;letter-spacing:.2em;color:#9090b0;margin-bottom:.5rem}
-.locked-status{font-size:1.5rem;font-weight:700;color:#ffb020;margin-bottom:1rem}
-.locked-message{color:#9090b0;line-height:1.7;margin-bottom:2rem}
-.locked-back{display:inline-block;padding:.5rem 1.5rem;border:1px solid #00d4ff;color:#00d4ff;text-decoration:none;border-radius:4px;transition:all .2s}
-.locked-back:hover{background:#00d4ff;color:#08080d}
-</style></head> <body class="bg-bg-deep text-text-primary font-body antialiased min-h-screen flex flex-col"> <header class="fixed top-0 left-0 right-0 z-50 border-b border-border-subtle bg-bg-deep/90 backdrop-blur-sm" data-astro-cid-3ef6ksr2> <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between" data-astro-cid-3ef6ksr2> <a href="/" class="font-display font-bold text-xl text-text-primary tracking-tight hover:text-accent-cyan transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-accent-cyan rounded" data-astro-cid-3ef6ksr2>
+/* ─── Transmission Reading Layout ─── */
+.reading-wrapper { max-width: 100%; overflow-x: hidden }
+
+.transmission-hero {
+  position: relative;
+  padding: 8rem 2rem 4rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 176, 32, 0.12);
+  background: radial-gradient(ellipse at 50% 0%, rgba(255,176,32,0.07) 0%, transparent 65%);
+}
+.transmission-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #ffb020, transparent);
+}
+
+.episode-label {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.35em;
+  color: #ffb020;
+  border: 1px solid rgba(255,176,32,0.35);
+  padding: 0.35rem 1rem;
+  margin-bottom: 1.75rem;
+  text-transform: uppercase;
+}
+
+.transmission-hero h1 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: clamp(2.2rem, 6vw, 3.8rem);
+  font-weight: 900;
+  color: #f0ede6;
+  line-height: 1.05;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+.transmission-meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: #8888a0;
+  letter-spacing: 0.12em;
+  flex-wrap: wrap;
+}
+.transmission-meta .sep { color: #ffb020; opacity: 0.6 }
+
+/* ─── Progress Bar ─── */
+.reading-progress {
+  position: fixed; top: 0; left: 0;
+  width: 0%; height: 2px;
+  background: linear-gradient(90deg, #ffb020 0%, #ff6b35 100%);
+  z-index: 9999;
+  transition: width 0.08s linear;
+  pointer-events: none;
+}
+
+/* ─── Chapter Nav ─── */
+.chapter-nav {
+  position: sticky; top: 65px; z-index: 40;
+  background: rgba(8, 8, 13, 0.9);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 176, 32, 0.1);
+  padding: 0.7rem 1.5rem;
+  display: flex; align-items: center; gap: 0.4rem;
+  overflow-x: auto; scrollbar-width: none;
+}
+.chapter-nav::-webkit-scrollbar { display: none }
+
+.chapter-nav a {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  color: #7878a0;
+  text-decoration: none;
+  padding: 0.25rem 0.6rem;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  white-space: nowrap;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+  flex-shrink: 0;
+  text-transform: uppercase;
+}
+.chapter-nav a:hover { color: #ffb020; border-color: rgba(255,176,32,0.3) }
+.chapter-nav a.active { color: #ffb020; border-color: rgba(255,176,32,0.45); background: rgba(255,176,32,0.07) }
+.chapter-nav .nav-sep { color: #ffb020; opacity: 0.35; flex-shrink: 0; font-size: 0.6rem }
+
+/* ─── Reading Container ─── */
+.reading-container {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 8rem;
+}
+
+/* Synopsis lead */
+.synopsis-lead {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.1rem;
+  line-height: 1.95;
+  color: #b8b4ac;
+  margin-bottom: 2.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid rgba(255,176,32,0.08);
+  font-style: italic;
+}
+
+/* Body text */
+.episode-text {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.05rem;
+  line-height: 1.98;
+  color: #c4c0b8;
+}
+.episode-text p { margin-bottom: 1.5rem }
+
+/* Drop cap on first paragraph of each chapter */
+.episode-text p.drop-cap::first-letter {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 4rem;
+  font-weight: 900;
+  float: left;
+  line-height: 0.78;
+  margin: 0.06em 0.1em 0 0;
+  color: #ffb020;
+}
+
+/* Section headings */
+.chapter-heading {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #f0ede6;
+  margin: 3.5rem 0 0.6rem;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255,176,32,0.1);
+}
+
+.section-heading {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #e8e4dc;
+  margin: 2.5rem 0 0.8rem;
+  letter-spacing: 0.01em;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.section-heading::before {
+  content: '//';
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: #ffb020;
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+
+/* Scene break */
+.scene-break {
+  text-align: center;
+  margin: 2.5rem 0;
+  color: rgba(255, 176, 32, 0.25);
+  font-size: 1.2rem;
+  letter-spacing: 0.9em;
+  user-select: none;
+}
+
+/* Haiku */
+.haiku {
+  font-family: 'Lora', Georgia, serif;
+  font-style: italic;
+  font-size: 1rem;
+  line-height: 2.1;
+  color: #a8a498;
+  margin: 2rem 0 2rem 1.5rem;
+  padding-left: 1.5rem;
+  border-left: 2px solid rgba(255, 176, 32, 0.2);
+}
+
+/* Pull quote */
+.pull-quote {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  font-style: italic;
+  color: #e8e4dc;
+  line-height: 1.55;
+  margin: 2.5rem 0;
+  padding: 1.25rem 0 1.25rem 1.5rem;
+  border-left: 3px solid #ffb020;
+  background: linear-gradient(90deg, rgba(255,176,32,0.04) 0%, transparent 100%);
+}
+
+/* Character cards */
+.character-card {
+  background: rgba(255,176,32,0.03);
+  border: 1px solid rgba(255,176,32,0.1);
+  border-radius: 6px;
+  padding: 1.25rem 1.5rem;
+  margin: 1.25rem 0;
+}
+.character-card strong {
+  display: block;
+  font-family: 'Fraunces', Georgia, serif;
+  color: #ffb020;
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+}
+.character-card p {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 0.92rem;
+  line-height: 1.75;
+  color: #a8a498;
+  margin: 0;
+}
+
+/* Tags */
+.tag-list { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem }
+.tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  color: #7070a0;
+  background: rgba(112,112,160,0.07);
+  border: 1px solid rgba(112,112,160,0.18);
+  padding: 0.2rem 0.55rem;
+  border-radius: 3px;
+}
+
+/* Back link */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  color: #7070a0;
+  text-decoration: none;
+  padding: 0.4rem 0.9rem;
+  border: 1px solid rgba(112,112,160,0.2);
+  border-radius: 4px;
+  transition: all 0.2s;
+  margin-bottom: 2.5rem;
+  text-transform: uppercase;
+}
+.back-link:hover { color: #ffb020; border-color: rgba(255,176,32,0.4) }
+.back-link svg { flex-shrink: 0 }
+
+/* Responsive */
+@media (max-width: 640px) {
+  .transmission-hero { padding: 6rem 1.25rem 3rem }
+  .reading-container { padding: 2rem 1.25rem 6rem }
+  .episode-text { font-size: 1rem }
+  .pull-quote { font-size: 1.1rem }
+  .chapter-nav { top: 57px }
+}
+</style>
+</head> <body class="bg-bg-deep text-text-primary font-body antialiased min-h-screen flex flex-col"> <header class="fixed top-0 left-0 right-0 z-50 border-b border-border-subtle bg-bg-deep/90 backdrop-blur-sm" data-astro-cid-3ef6ksr2> <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between" data-astro-cid-3ef6ksr2> <a href="/" class="font-display font-bold text-xl text-text-primary tracking-tight hover:text-accent-cyan transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-accent-cyan rounded" data-astro-cid-3ef6ksr2>
 EPHERGENT
-</a> <div class="hidden md:flex items-center gap-8" data-astro-cid-3ef6ksr2> <a href="/games/" class="text-text-secondary hover:text-accent-cyan transition-colors duration-300 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-accent-cyan rounded" data-astro-cid-3ef6ksr2>Games</a> <a href="/transmissions/" class="text-text-secondary hover:text-accent-cyan transition-colors duration-300 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-accent-cyan rounded" data-astro-cid-3ef6ksr2>Transmissions</a> <a href="/crew/" class="text-text-secondary hover:text-accent-cyan transition-colors duration-300 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-accent-cyan rounded" data-astro-cid-3ef6ksr2>Crew</a> <a href="/atlas/" class="text-text-secondary hover:text-accent-cyan transition-colors duration-300 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-accent-cyan rounded" data-astro-cid-3ef6ksr2>Lore Atlas</a> <a href="/transmissions/" class="text-text-secondary hover:text-accent-cyan transition-colors duration-300 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-accent-cyan rounded" data-astro-cid-3ef6ksr2>Transmissions</a> </div> <div class="flex items-center gap-4" data-astro-cid-3ef6ksr2> <!-- Mobile hamburger button --> <button id="mobile-menu-btn" class="md:hidden relative w-8 h-8 flex items-center justify-center cursor-pointer text-text-primary" aria-label="Open menu" data-astro-cid-3ef6ksr2> <span class="hamburger-line hamburger-top" data-astro-cid-3ef6ksr2></span> <span class="hamburger-line hamburger-mid" data-astro-cid-3ef6ksr2></span> <span class="hamburger-line hamburger-bot" data-astro-cid-3ef6ksr2></span> </button> </div> </nav> </header> <!-- Mobile menu backdrop --> <div id="mobile-backdrop" class="fixed inset-0 bg-black/50 z-[998] opacity-0 pointer-events-none transition-opacity duration-300" data-astro-cid-3ef6ksr2></div> <!-- Mobile menu panel --> <nav id="mobile-menu" class="fixed top-0 right-0 w-[75%] max-w-[320px] h-full bg-bg-deep/95 backdrop-blur-xl z-[999] transform translate-x-full transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] flex flex-col pt-20 px-8 gap-6" data-astro-cid-3ef6ksr2> <a href="/games/" class="text-lg text-text-primary/80 hover:text-accent-cyan transition-colors mobile-link" data-astro-cid-3ef6ksr2>Games</a> <a href="/transmissions/" class="text-lg text-text-primary/80 hover:text-accent-cyan transition-colors mobile-link" data-astro-cid-3ef6ksr2>Transmissions</a> <a href="/crew/" class="text-lg text-text-primary/80 hover:text-accent-cyan transition-colors mobile-link" data-astro-cid-3ef6ksr2>Crew</a> <a href="/atlas/" class="text-lg text-text-primary/80 hover:text-accent-cyan transition-colors mobile-link" data-astro-cid-3ef6ksr2>Lore Atlas</a> <a href="/transmissions/" class="text-lg text-text-primary/80 hover:text-accent-cyan transition-colors mobile-link" data-astro-cid-3ef6ksr2>Transmissions</a> <div class="mt-auto mb-8" data-astro-cid-3ef6ksr2> <p class="text-xs text-text-secondary" data-astro-cid-3ef6ksr2>Ephergent v1.0</p> </div> </nav>  <script type="module">const s=document.getElementById("mobile-menu-btn"),n=document.getElementById("mobile-menu"),t=document.getElementById("mobile-backdrop");function o(){if(!n||!t||!s)return;const e=n.classList.toggle("open");n.classList.toggle("translate-x-full",!e),n.classList.toggle("translate-x-0",e),t.classList.toggle("opacity-0",!e),t.classList.toggle("opacity-100",e),t.classList.toggle("pointer-events-none",!e),t.classList.toggle("pointer-events-auto",e),s.classList.toggle("menu-open",e),s.setAttribute("aria-label",e?"Close menu":"Open menu"),document.body.style.overflow=e?"hidden":""}s?.addEventListener("click",o);t?.addEventListener("click",o);</script> <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div> <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-0 focus:left-0 focus:z-[10000] focus:bg-accent-cyan focus:text-bg-deep focus:px-4 focus:py-2 focus:text-sm focus:font-semibold">Skip to main content</a> <main id="main-content" class="flex-1 pt-[73px]"> <div class="reading-container"><h1 id="the-day-the-dial-broke">The Day the Dial Broke</h1>
-<h2 id="pixel-voice-synopsis">Pixel-Voice Synopsis</h2>
-<p>Okay, so — deep breath — imagine you’re sitting at your desk at the Department of Reality Maintenance. Which, yes, sounds weird, but trust me, it was the most boring place on Earth. I’m a data analyst. I filed forms. Forms with names like “Subsection C: Ambient Variance Report” and “Form 19-Q: Environmental Compliance Metrics.” I never really understood what any of it measured. Nobody did. It was government work. You filed the forms, you went home, you didn’t ask questions.</p>
-<p>My espresso machine, A1, made perfect coffee every single time. Like, <em>unsettlingly</em> perfect. Sometimes I’d swear I saw a flicker of blue light from his chrome body, like a glitch. Sometimes the coffee tasted like it knew I’d had a bad morning before I did. But you don’t question a good espresso machine. You just drink the coffee. Clive — my desk companion, a knee-high robot of ancient bronze alloy, his glowing sphere head topped with a weathered fedora, been at that desk since before I was born — sometimes I’d look up and he’d be in a slightly different spot. Meatball, my dog, snoring under my desk like always, except sometimes he’d perk up and stare at absolutely nothing with this look like he was <em>listening</em> to something I couldn’t hear.</p>
-<p>And then the building started <em>screaming</em>. Not an alarm. Not a sound any building should make. The floor vibrated, the walls — I swear to you — the walls started <em>flickering</em>, like they couldn’t decide what they were made of. My monitor cracked. The lights went wrong. And Clive — my <em>desk companion</em> — began pulsing light from his sphere head in a deliberate pattern. And somehow, in a way I cannot explain, I read it: <em>DEEP FAULT. RUN.</em> A robot. Told me to run. And I <em>listened</em>, because the hallway behind me had just folded in on itself like a piece of paper, and THAT ISN’T POSSIBLE.</p>
-<p>I grabbed A1, Clive clambered up onto my shoulder, whistled for Meatball, and we ran. Through hallways that were rewriting themselves, past rooms that existed in two places at once, to an evacuation bay I didn’t even know was THERE. There was a vessel — a lifeboat — with a hatch and an engine and a pre-recorded message saying “Your reality is experiencing turbulence, please remain calm.” TURBULENCE. And then we punched through something, and I looked out the porthole, and I saw… I don’t know what I saw. An expanse. An impossible expanse of light and static and color, with the shadows of entire <em>worlds</em> drifting underneath it. I had no framework. No context. No idea what I was looking at. I just knew the DRM — my boring, pointless government job — had been hiding something so massive it broke my brain to look at it.</p>
-<h2 id="narrative-structure">Narrative Structure</h2>
-<h3 id="opening">Opening</h3>
-<p>The DRM headquarters is, by all appearances, the most unremarkable government building in the city. Beige walls. Drop ceiling. The faint smell of recycled air and old carpet. Pixel Paradox sits at her desk in the data analysis wing, electric blue hair in a messy bun, surrounded by manila folders, a cracked monitor running spreadsheets, and a filing cabinet she’s never seen the bottom of. Through the windows: a normal city skyline, morning traffic, pigeons on the ledge. The Department of Reality Maintenance — she’s never been entirely sure what they’re maintaining, but the pay is decent and nobody bothers her. Meatball sleeps under her desk, paws twitching. Clive — a knee-high robot of ancient bronze alloy, his glowing sphere head topped with a battered fedora — stands at his usual post. She could swear he was closer to the window yesterday. He’s by the filing cabinet now. She doesn’t think about it.</p>
-<p>In her jacket pocket, against her hip, something is warm. She notices it for a half-second — warmth she’d attribute to body heat, to the jacket, to anything other than what it actually is. She files it away. Later. There will be time later. There isn’t, but her brain hasn’t caught up to that yet.</p>
-<p>A1’s chrome espresso machine body occupies the corner of her cubicle, steam curling from his spout as he brews her third cortado of the morning. He’s a smart appliance — office-issued, supposedly just a high-end coffee maker — but sometimes the steam curls in patterns that look almost deliberate. Sometimes a faint blue flicker runs across his surface, like a glitch in the chrome. The coffee is always perfect. <em>Always.</em> “The variance report for Sector 12 is done, Pixel. I took the liberty of auto-filling the compliance metrics. You’re welcome.”</p>
-<p>“You’re a lifesaver, A1. Literally. That form has seventeen subsections.”</p>
-<p>“Eighteen. They added one last quarter. ‘Subsection R: Ambient Environmental Unease Survey.’ I took the liberty of checking ‘yes.’”</p>
-<p>Pixel snorts. She’s never understood what half these forms actually measure. Ambient variance. Environmental compliance. Sector frequency reports. It sounds important and means nothing to her. She files them. That’s the job.</p>
-<p>Then the hum changes.</p>
-<p>It starts low — a vibration in the floor, in the walls, in the fillings of Pixel’s teeth. Not like a building hum. Like something <em>underneath</em> the building, something vast, waking up. Every fluorescent light in the office flickers simultaneously. Her monitor cracks — not from impact, but from the <em>inside</em>, like the screen disagreed with itself. Meatball bolts upright, ears flat, whimpering at something, staring at a point in the air where there’s nothing to see. And Clive — her <em>desk companion</em> — begins pulsing light from his sphere head in a precise, deliberate rhythm. Pixel stares at it. Her brain, trained by years of idle pattern recognition, reads it before she can stop herself: <em>DEEP FAULT. RUN.</em></p>
-<p>She looks at Clive. At a <em>robot</em> that just communicated a message. “What the—”</p>
-<p>The wall behind her phases. There’s no other word for it. One moment it’s beige drywall. The next it’s glass. Then stone. Then something that looks like coral made of light. Then back to drywall. Then all of them at once. The floor buckles — not cracking, but <em>rippling</em>, like the building is a reflection in water and someone just threw a stone into it. Pixel’s chair slides sideways. Filing cabinets topple. Forms scatter into rifts that open and close in the air like mouths. Through the chaos, Pixel sees things that her brain rejects outright — geometries that fold in on themselves, spaces that are bigger on the inside, a hallway that leads in two directions simultaneously.</p>
-<p>THIS ISN’T POSSIBLE. None of this is possible.</p>
-<h3 id="escalation">Escalation</h3>
-<p>Pixel doesn’t think. She grabs A1’s espresso machine body — heavier than she remembers, warm with residual brewing heat, and for a split second his chrome surface flashes with blue light brighter than any appliance glitch — and Clive scrambles up onto her shoulder, his small legs finding purchase on her jacket, his sphere head glowing steady against her neck. Meatball is already at the door, barking at her to <em>move</em>. They run through corridors that have become nightmares — a hallway that stretches to infinity, then compresses to nothing, then is just a hallway again. DRM employees are screaming, running, some frozen in place staring at walls that have become windows into places that shouldn’t exist. A filing cabinet falls into a rift and doesn’t come back. The break room is gone — not destroyed, just <em>absent</em>, replaced by a space that hurts to look at.</p>
-<p>Pixel’s mind is a siren of <em>this can’t be happening this can’t be happening this can’t be happening.</em></p>
-<p>They reach a section of the building she’s never been in. A door she’s never seen. Behind it: a bay. An <em>evacuation</em> bay. With a vessel. A lifeboat. With a hatch, an engine, an actual <em>cockpit</em>. In a building she thought processed regulatory paperwork.</p>
-<p>“What the HELL is this?” she breathes. But Meatball is already inside, and the building behind them is folding like origami, and there’s no time.</p>
-<p>She shoves A1 onto the cramped deck. Clive drops from her shoulder to the console, his feet finding purchase on the metal surface with a soft click. For a moment — just a moment — Clive’s glow dims. His sphere head tilts toward the console panel beneath him, and his surface hums against the metal. Pixel sees it: a flicker of something that isn’t surprise. Something that isn’t recognition either. More like… home. Then Clive straightens, adjusts his fedora, and says nothing. Pixel doesn’t have time to ask.</p>
-<p>Meatball wedges himself under the single bench seat. The pre-recorded evacuation message begins: <em>“Your reality is experiencing turbulence. Please secure all personal items and maintain a calm disposition. The DRM thanks you for your service.”</em></p>
-<p>“Turbulence?!” Pixel shouts at nobody. “TURBULENCE?!”</p>
-<p>She slams the hatch. The lifeboat’s engine — something she has no name for, something that <em>hums</em> in a way engines don’t — coughs to life. The vessel lurches, shudders, and then there’s a sensation like being turned inside out, like every atom in her body is a radio dial being spun to a station that doesn’t exist, and they punch through <em>something</em> — through the wall of whatever the world was — and into the space beyond.</p>
-<p>The Interdimensional Space.</p>
-<p>In her pocket, against her hip, Mochi pulses warm. A slow, steady warmth that Pixel attributes to adrenaline, to fear, to the heat of running. She doesn’t think about it. Not yet.</p>
-<p>The engine hums with a strange resonance — and underneath the hum, something else. An undertone that doesn’t match any mechanical frequency. Pixel hears it as a texture, a color in the sound. A1 notices too — his chrome surface flickers, and for a moment his processing registers it and files it away without comment. Something old. Something that predates the engine. Something the lifeboat picked up from its surroundings and carried in, the way a resonant shell carries the memory of the frequency that made it.</p>
-<p>Pixel presses her face to the scratched porthole and her breath stops.</p>
-<p>It’s an expanse. A vast, impossible expanse of shimmering static, light that moves like water, color that doesn’t map to any spectrum she knows. Ribbons of aurora streak through the void — not light exactly, but <em>something</em>, something alive and humming, the residual echo of… she doesn’t know what. Below the surface (if there is a surface), ghostly shapes drift: immense, slow-moving silhouettes that look like — she can barely form the thought — like <em>worlds</em>. Entire worlds, half-formed, flickering in and out like stations on a radio you’re scrolling past too fast. The sky — if it’s sky — is a deep, rolling static, beautiful and terrifying, punctuated by distant flashes where currents of color collide.</p>
-<p>She has no words. No framework. No category for any of this. The DRM was filing forms about <em>this</em>? The boring compliance reports were about… whatever THIS is?</p>
-<p>A1’s chrome surface flickers — and for the first time, something happens that has never happened before. A faint blue glow extends from his body, just a few inches, shimmering in the air. Not a hologram. Not a glitch. Something deeper. His voice, when it comes, is different — still A1, still dry, still precise, but with an undertone of something vast and uncertain. “I… seem to know this place. I don’t know how I know this. I don’t have a file for this knowledge. It’s not in any database I can access. But I feel…” A long pause, steam curling from his spout. “I feel like I’ve been here before. A very long time ago.” Another pause. Then, more familiar: “Shall I make espresso? I find routine… stabilizing.”</p>
-<p>Clive’s sphere dims, then pulses slowly, deliberately. Pixel reads the pattern — and this time, reading it doesn’t feel strange. It feels <em>necessary</em>. It’s a haiku:</p>
-<p><em>Between the stations</em>
-<em>the silence hums with lost worlds</em>
-<em>we drift, untuned</em></p>
-<p>Her throat tightens. Her <em>desk companion</em> just wrote poetry about the void.</p>
-<p>Meatball whimpers, then presses his warm body against Pixel’s leg. She can feel him trembling — not with fear exactly, but with <em>something</em>. Like whatever they’re floating in resonates with something inside him. His eyes are wide, wet, fixed on the porthole. He doesn’t look scared. He looks like he’s <em>listening</em>.</p>
-<p>In Pixel’s pocket, Mochi pulses again. Warmer now. Steadier. As if the void beyond the porthole is exactly where Mochi was always meant to be.</p>
-<h3 id="climax">Climax</h3>
-<p>The lifeboat’s power fluctuates. The air recycler kicks out a smell that’s equal parts toner, burnt circuitry, and Meatball’s anxiety. The engine hums with that strange resonance, but the vessel has no navigation she can understand — buttons labeled with symbols she’s never seen, readouts in units that don’t correspond to anything she learned in school.</p>
-<p>Pixel’s mind is catching up. Slowly, terribly, the pieces are falling into place.</p>
-<p>The DRM wasn’t a regulatory compliance agency. It was never about environmental metrics or ambient variance. The forms she filed — the ones with names she never understood — they were about <em>this</em>. This expanse. These worlds. The DRM was maintaining <em>reality itself</em>, and she’d been sitting in the middle of it for years without knowing. Ninety years of institutional history, entire departments she’d never had clearance to visit, locked floors she’d assumed were storage — all of it was about keeping… whatever this is… stable. Hidden. <em>Secret.</em></p>
-<p>And now it’s gone. Not temporarily closed, not restructured. <em>Gone.</em> The agency that apparently held the fabric of existence together just crumbled like wet paper, and nobody told her what she was actually working on. Nobody told <em>anyone</em>.</p>
-<p>She looks at A1 — an espresso machine that just admitted to memories he shouldn’t have. At Clive — a knee-high robot whose sphere glowed a warning before the building fell, who wrote poetry about the void, who paused at a console panel like it felt familiar. At Meatball — a dog who’s staring at an impossible expanse like he <em>understands</em> it. At the scratched porthole and the void beyond.</p>
-<p>“Okay,” she says, and her voice cracks on the word. She tries again. “Okay. So. Everything I thought was real… the office, the forms, the job… it was a cover. For <em>this</em>.” She gestures at the porthole. “There’s an entire… I don’t even… there are <em>worlds</em> out there. The DRM knew. They always knew. And they just let me file forms about it without telling me what any of it meant.”</p>
-<p>She’s shaking. Meatball presses harder against her leg.</p>
-<p>“And now it’s gone. And we’re in a lifeboat that I didn’t know existed, floating in a place I didn’t know was real, and our crew is me, a coffee machine that’s having an existential crisis, a small robot who apparently speaks in code, and the world’s most empathetic dog.”</p>
-<p>Meatball’s tail wags once.</p>
-<p>“So what do we <em>do</em>?”</p>
-<p>A1’s blue glow flickers. When he speaks, it’s with the careful precision she’s always known — but underneath it, something else. Something that sounds almost like wonder. “I believe, Pixel, that you do what you have always done. You observe. You ask questions. You tell people what you’ve found.”</p>
-<p>Clive’s sphere brightens: <em>BROADCAST. SOMEONE MIGHT HEAR.</em></p>
-<p>Pixel stares at him. “You’ve been able to do this the whole time? The whole time I’ve worked here, you could <em>talk</em>?”</p>
-<p>Clive pulses a single, emphatic flash. She reads it: <em>LATER. BROADCAST NOW.</em></p>
-<p>Pixel looks at the lifeboat’s battered communications array. It’s basic — a microphone, a frequency dial, an antenna that looks like it was designed in the 1970s. But it works. She can feel it humming, tuned to something, ready to transmit into… whatever this is.</p>
-<p>She’s a data analyst who always wanted to be a journalist. She’s got a story nobody’s ever told. She’s got a microphone. And she’s got nothing left to lose.</p>
-<p>She flips the comm switch, adjusts the dial as wide as it’ll go, takes a shaking breath, and begins.</p>
-<p>“This is… my name is Pixel Paradox. I worked at the Department of Reality Maintenance. I <em>thought</em> I worked at a regulatory agency. I was wrong. I was very, very wrong.” Her voice steadies, fueled by something between fury and awe. “The DRM is gone. The building collapsed — not like a building, like… I can’t explain it. Reality broke. Actually broke. And now I’m in a lifeboat in an expanse that shouldn’t exist, looking at things I don’t have names for, and I don’t know if anyone can hear this.”</p>
-<p>She pauses. Looks at the porthole. At the ghostly shapes drifting in the deep.</p>
-<p>“But I’m going to find out what’s out there. I’m going to find out what the DRM was hiding, and why it fell, and what all those forms I filed actually meant. Someone needs to document this. Someone needs to keep a record of whatever’s happening.”</p>
-<p>Another pause. Quieter now. The anger fading into something rawer.</p>
-<p>“This is The Ephergent. First transmission. We’re out here. We don’t know where ‘here’ is. But we’re listening. And if you can hear this… we could really use some answers.”</p>
-<h3 id="resolution">Resolution</h3>
-<p>Static. The broadcast goes out into the Space and the Space swallows it whole. No response. No acknowledgment. Just the hum of whatever medium they’re floating in and the slow, patient drift of shapes beneath them.</p>
-<p>But A1 notices something. That blue glow — the one that flickered to life when they entered the Space — hasn’t faded. It’s expanded. Just slightly, just a few inches more than before. And inside him, in circuits that shouldn’t hold anything but brewing temperatures and grind settings, something stirs. Not a memory exactly. More like an echo. The ghost of a corridor he’s never walked. The hum of an engine he’s never heard. A sense of <em>scale</em> — vast, ancient, impossible — pressing against the inside of a chrome espresso machine like a cathedral trying to fit inside a thimble. He doesn’t mention it. Not yet. He’s not sure it’s real. He makes espresso instead, because routine is how he holds himself together while something ancient and enormous slowly wakes up inside him.</p>
-<p>Clive settles onto the console, sphere glowing soft blue-white, fedora tilted at its usual angle. Ninety years. He’s been at the DRM for ninety years, and for all of them, he kept the secrets. Followed the protocols. Communicated only in patterns obscure enough that nobody would notice — except Pixel, who noticed everything without knowing what she was noticing. His old partner, Barry Kowalski, went into the Space decades ago. The official report said “transferred.” Clive knew better. Barry followed a signal. And now Clive is here too, looking at the same void, wondering if Barry found what he was looking for — and whether the answers Clive kept locked away for ninety years would have changed anything.</p>
-<p>In Pixel’s pocket, Mochi pulses warm. Steady. Patient. A warmth that Pixel still hasn’t named.</p>
-<p>Meatball curls up at Pixel’s feet and sighs — a deep, contented sigh that seems impossible given the circumstances. But Meatball has always been like this. Calm when things are big. Anxious when the mailman comes. It’s as if the Interdimensional Space, for all its strangeness, resonates with something in him. Something that’s always been there, quiet and patient, waiting for a moment exactly like this.</p>
-<p>Pixel leans back against the cold metal wall of the lifeboat, exhausted, terrified, furious, and weirdly exhilarated. Everything she knew was a lie. Or not a lie — a <em>cover</em>. A carefully maintained fiction. And now the fiction is shattered and the truth is an expanse of impossible light and she’s broadcasting into it from a boat that smells like toner.</p>
-<p>But the signal is alive. And so are they.</p>
-<h2 id="character-focus">Character Focus</h2>
-<p><strong>Pixel Paradox:</strong> Transitions from bored, oblivious data analyst to accidental broadcaster. She had no idea what the DRM really was — filed forms she didn’t understand, worked in a building with locked floors she assumed were storage, never questioned any of it. She’s not special in any supernatural sense; she’s just observant, analytical, and stubborn enough to notice patterns others ignore (like reading Clive’s light patterns without knowing why she could). The rupture strips away every assumption she had about her life, and her response — fury, terror, and an overwhelming need to <em>document</em> — reveals who she really is. Her first broadcast isn’t polished or planned. It’s raw, confused, and angry. And that’s what makes it real.</p>
-<p><strong>A1:</strong> Until today, he was an espresso machine. A very good one. Suspiciously good — coffee that anticipated your mood, the occasional blue glitch, an oddly sophisticated vocabulary for a smart appliance. Nobody thought much of it. But the rupture cracked something open in him. In the Interdimensional Space, buried instincts are surfacing — fragments of knowledge he can’t explain, echoes of a vastness that shouldn’t fit inside chrome and circuits. He’s not ready to name it. He’s not sure it’s real. So he makes espresso, because routine is how he holds himself together while something ancient and enormous slowly wakes up inside him. His bond with Pixel is genuine; she’s always talked to him like a person, not a machine, and that matters more now than ever.</p>
-<p><strong>Clive:</strong> The keeper of secrets. Ninety years at the DRM, and he knew <em>everything</em> — the real mission, the frequencies, the architecture, all of it. Bound by protocols older than Pixel’s grandmother, communicating only in light patterns too subtle for anyone to decode. Except Pixel decoded them anyway, casually, without realizing she was doing anything unusual. Clive’s been watching her for years because of that. His old partner Barry Kowalski went into the Space decades ago, and the official story was a lie Clive was required to maintain. Now the DRM is gone, the protocols are ash, and Clive is free to say what he’s always known — in his own way, in his own time, one glow pattern at a time. His pause at the console panel — the way his sphere dimmed against the metal as if the surface felt familiar — is the first sign that Clive has been in places like this before. He doesn’t explain. Not yet.</p>
-<p><strong>Mochi:</strong> In Pixel’s pocket, warm and patient, present from the very first moment. Pixel notices the warmth and attributes it to adrenaline, to body heat, to anything other than what it is. Mochi doesn’t speak. Mochi doesn’t act. Mochi simply is — warm, steady, tuned to something in the void that nobody else can name. The Ephergent Frequency hums beneath everything, and Mochi responds to it like a compass responds to north. The crew won’t understand this for two more seasons. For now, it’s just warmth in a pocket, noticed and dismissed.</p>
-<p><strong>Meatball:</strong> A good dog in a strange situation. He’s always been unusually perceptive — staring at empty corners, perking up at sounds nobody else heard, seeming to <em>understand</em> things a dog shouldn’t. Pixel chalked it up to “weird dog stuff.” But in the Interdimensional Space, Meatball is calm when he shouldn’t be, attentive when he should be scared, and pressed against Pixel’s leg like he’s exactly where he belongs. The crew’s emotional anchor, processing the impossible with a sigh and a tail wag.</p>
-<h2 id="tags">Tags</h2>
-<ul>
-<li>reality_rupture</li>
-<li>drm_collapse</li>
-<li>interdimensional_space</li>
-<li>lifeboat</li>
-<li>first_broadcast</li>
-<li>pilot_episode</li>
-<li>frequency_model</li>
-<li>quantum_static</li>
-<li>found_family</li>
-<li>the_drift</li>
-<li>phase_shifter</li>
-<li>prime_material</li>
-<li>unaware_crew</li>
-<li>first_contact</li>
-<li>that_was_real</li>
-<li>clive_wall_panel_recognition</li>
-<li>mochi_first_warmth</li>
-<li>ephergent_frequency_beat</li>
-<li>barry_deliberate_departure</li>
-</ul> </main> <script type="module">(function(){if(!window.matchMedia("(pointer: coarse)").matches){var t=document.getElementById("cursor-dot");t&&(document.addEventListener("mousemove",function(e){t.style.transform="translate("+e.clientX+"px, "+e.clientY+"px)"}),document.querySelectorAll('a, button, [role="button"], input, textarea, select').forEach(function(e){e.addEventListener("mouseenter",function(){t.classList.add("cursor-hover")}),e.addEventListener("mouseleave",function(){t.classList.remove("cursor-hover")})}))}})();</script> </body> </html</div>>
+</a> <div class="hidden md:flex items-center gap-8" data-astro-cid-3ef6ksr2> <a href="/games/" class="text-text-secondary hover:text-accent-cyan transition-colors duration-300 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-accent-cyan rounded" data-astro-cid-3ef6ksr2>Games</a> <a href="/transmissions/" class="text-text-secondary hover:text-accent-cyan transition-colors duration-300 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-accent-cyan rounded" data-astro-cid-3ef6ksr2>Transmissions</a> <a href="/crew/" class="text-text-secondary hover:text-accent-cyan transition-colors duration-300 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-accent-cyan rounded" data-astro-cid-3ef6ksr2>Crew</a> <a href="/atlas/" class="text-text-secondary hover:text-accent-cyan transition-colors duration-300 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-accent-cyan rounded" data-astro-cid-3ef6ksr2>Lore Atlas</a> </div> <div class="flex items-center gap-4" data-astro-cid-3ef6ksr2> <button id="mobile-menu-btn" class="md:hidden relative w-8 h-8 flex items-center justify-center cursor-pointer text-text-primary" aria-label="Open menu" data-astro-cid-3ef6ksr2> <span class="hamburger-line hamburger-top" data-astro-cid-3ef6ksr2></span> <span class="hamburger-line hamburger-mid" data-astro-cid-3ef6ksr2></span> <span class="hamburger-line hamburger-bot" data-astro-cid-3ef6ksr2></span> </button> </div> </nav> </header> <div id="mobile-backdrop" class="fixed inset-0 bg-black/50 z-[998] opacity-0 pointer-events-none transition-opacity duration-300" data-astro-cid-3ef6ksr2></div> <nav id="mobile-menu" class="fixed top-0 right-0 w-[75%] max-w-[320px] h-full bg-bg-deep/95 backdrop-blur-xl z-[999] transform translate-x-full transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] flex flex-col pt-20 px-8 gap-6" data-astro-cid-3ef6ksr2> <a href="/games/" class="text-lg text-text-primary/80 hover:text-accent-cyan transition-colors mobile-link" data-astro-cid-3ef6ksr2>Games</a> <a href="/transmissions/" class="text-lg text-text-primary/80 hover:text-accent-cyan transition-colors mobile-link" data-astro-cid-3ef6ksr2>Transmissions</a> <a href="/crew/" class="text-lg text-text-primary/80 hover:text-accent-cyan transition-colors mobile-link" data-astro-cid-3ef6ksr2>Crew</a> <a href="/atlas/" class="text-lg text-text-primary/80 hover:text-accent-cyan transition-colors mobile-link" data-astro-cid-3ef6ksr2>Lore Atlas</a> <div class="mt-auto mb-8" data-astro-cid-3ef6ksr2> <p class="text-xs text-text-secondary" data-astro-cid-3ef6ksr2>Ephergent v1.0</p> </div> </nav> <script type="module">const s=document.getElementById("mobile-menu-btn"),n=document.getElementById("mobile-menu"),t=document.getElementById("mobile-backdrop");function o(){if(!n||!t||!s)return;const e=n.classList.toggle("open");n.classList.toggle("translate-x-full",!e),n.classList.toggle("translate-x-0",e),t.classList.toggle("opacity-0",!e),t.classList.toggle("opacity-100",e),t.classList.toggle("pointer-events-none",!e),t.classList.toggle("pointer-events-auto",e),s.classList.toggle("menu-open",e),s.setAttribute("aria-label",e?"Close menu":"Open menu"),document.body.style.overflow=e?"hidden":""}s?.addEventListener("click",o);t?.addEventListener("click",o);</script> <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div> <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-0 focus:left-0 focus:z-[10000] focus:bg-accent-cyan focus:text-bg-deep focus:px-4 focus:py-2 focus:text-sm focus:font-semibold">Skip to main content</a> <main id="main-content" class="flex-1 pt-[73px]">
+<div class="reading-progress" id="reading-progress"></div>
+<div class="reading-wrapper">
+ <div class="transmission-hero">
+  <span class="episode-label">S01E01</span>
+  <h1>The Day the Dial Broke</h1>
+  <div class="transmission-meta">
+   <span>Season 1</span>
+   <span class="sep">·</span>
+   <span>Transmitted: Day 1</span>
+   <span class="sep">·</span>
+   <span>~12 min read</span>
+  </div>
+ </div>
+ <nav class="chapter-nav" id="chapter-nav">
+  <a href="#synopsis">Synopsis</a>
+  <span class="nav-sep">·</span>
+  <a href="#opening">Opening</a>
+  <span class="nav-sep">·</span>
+  <a href="#escalation">Escalation</a>
+  <span class="nav-sep">·</span>
+  <a href="#climax">Climax</a>
+  <span class="nav-sep">·</span>
+  <a href="#resolution">Resolution</a>
+  <span class="nav-sep">·</span>
+  <a href="#characters">Characters</a>
+  <span class="nav-sep">·</span>
+  <a href="#tags">Tags</a>
+ </nav>
+ <div class="reading-container">
+  <a href="/transmissions/" class="back-link">
+   <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M7.5 2.5L4 6l3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+   All Transmissions
+  </a>
+  <h2 id="synopsis" class="chapter-heading">Synopsis</h2>
+  <p class="synopsis-lead">Okay, so — deep breath — imagine you're sitting at your desk at the Department of Reality Maintenance. Which, yes, sounds weird, but trust me, it was the most boring place on Earth. I'm a data analyst. I filed forms. Forms with names like "Subsection C: Ambient Variance Report" and "Form 19-Q: Environmental Compliance Metrics." I never really understood what any of it measured. Nobody did. It was government work. You filed the forms, you went home, you didn't ask questions.</p>
+  <div class="episode-text">
+   <p>My espresso machine, A1, made perfect coffee every single time. Like, <em>unsettlingly</em> perfect. Sometimes I'd swear I saw a flicker of blue light from his chrome body, like a glitch. Sometimes the coffee tasted like it knew I'd had a bad morning before I did. But you don't question a good espresso machine. You just drink the coffee. Clive — my desk companion, a knee-high robot of ancient bronze alloy, his glowing sphere head topped with a weathered fedora, been at that desk since before I was born — sometimes I'd look up and he'd be in a slightly different spot. Meatball, my dog, snoring under my desk like always, except sometimes he'd perk up and stare at absolutely nothing with this look like he was <em>listening</em> to something I couldn't hear.</p>
+   <p>And then the building started <em>screaming</em>. Not an alarm. Not a sound any building should make. The floor vibrated, the walls — I swear to you — the walls started <em>flickering</em>, like they couldn't decide what they were made of. My monitor cracked. The lights went wrong. And Clive — my <em>desk companion</em> — began pulsing light from his sphere head in a deliberate pattern. And somehow, in a way I cannot explain, I read it: <em>DEEP FAULT. RUN.</em> A robot. Told me to run. And I <em>listened</em>, because the hallway behind me had just folded in on itself like a piece of paper, and THAT ISN'T POSSIBLE.</p>
+   <p>I grabbed A1, Clive clambered up onto my shoulder, whistled for Meatball, and we ran. Through hallways that were rewriting themselves, past rooms that existed in two places at once, to an evacuation bay I didn't even know was THERE. There was a vessel — a lifeboat — with a hatch and an engine and a pre-recorded message saying "Your reality is experiencing turbulence, please remain calm." TURBULENCE. And then we punched through something, and I looked out the porthole, and I saw… I don't know what I saw. An expanse. An impossible expanse of light and static and color, with the shadows of entire <em>worlds</em> drifting underneath it. I had no framework. No context. No idea what I was looking at. I just knew the DRM — my boring, pointless government job — had been hiding something so massive it broke my brain to look at it.</p>
+  </div>
+  <h2 id="the-story" class="chapter-heading">The Story</h2>
+  <h3 id="opening" class="section-heading">Opening</h3>
+  <div class="episode-text">
+   <p class="drop-cap">The DRM headquarters is, by all appearances, the most unremarkable government building in the city. Beige walls. Drop ceiling. The faint smell of recycled air and old carpet. Pixel Paradox sits at her desk in the data analysis wing, electric blue hair in a messy bun, surrounded by manila folders, a cracked monitor running spreadsheets, and a filing cabinet she's never seen the bottom of. Through the windows: a normal city skyline, morning traffic, pigeons on the ledge. The Department of Reality Maintenance — she's never been entirely sure what they're maintaining, but the pay is decent and nobody bothers her. Meatball sleeps under her desk, paws twitching. Clive — a knee-high robot of ancient bronze alloy, his glowing sphere head topped with a battered fedora — stands at his usual post. She could swear he was closer to the window yesterday. He's by the filing cabinet now. She doesn't think about it.</p>
+   <p>In her jacket pocket, against her hip, something is warm. She notices it for a half-second — warmth she'd attribute to body heat, to the jacket, to anything other than what it actually is. She files it away. Later. There will be time later. There isn't, but her brain hasn't caught up to that yet.</p>
+   <p>A1's chrome espresso machine body occupies the corner of her cubicle, steam curling from his spout as he brews her third cortado of the morning. He's a smart appliance — office-issued, supposedly just a high-end coffee maker — but sometimes the steam curls in patterns that look almost deliberate. Sometimes a faint blue flicker runs across his surface, like a glitch in the chrome. The coffee is always perfect. <em>Always.</em> "The variance report for Sector 12 is done, Pixel. I took the liberty of auto-filling the compliance metrics. You're welcome."</p>
+   <p>"You're a lifesaver, A1. Literally. That form has seventeen subsections."</p>
+   <p>"Eighteen. They added one last quarter. 'Subsection R: Ambient Environmental Unease Survey.' I took the liberty of checking 'yes.'" </p>
+   <p>Pixel snorts. She's never understood what half these forms actually measure. Ambient variance. Environmental compliance. Sector frequency reports. It sounds important and means nothing to her. She files them. That's the job.</p>
+   <p>Then the hum changes.</p>
+   <p>It starts low — a vibration in the floor, in the walls, in the fillings of Pixel's teeth. Not like a building hum. Like something <em>underneath</em> the building, something vast, waking up. Every fluorescent light in the office flickers simultaneously. Her monitor cracks — not from impact, but from the <em>inside</em>, like the screen disagreed with itself. Meatball bolts upright, ears flat, whimpering at something, staring at a point in the air where there's nothing to see. And Clive — her <em>desk companion</em> — begins pulsing light from his sphere head in a precise, deliberate rhythm. Pixel stares at it. Her brain, trained by years of idle pattern recognition, reads it before she can stop herself: <em>DEEP FAULT. RUN.</em></p>
+   <p>She looks at Clive. At a <em>robot</em> that just communicated a message. "What the—"</p>
+   <p>The wall behind her phases. There's no other word for it. One moment it's beige drywall. The next it's glass. Then stone. Then something that looks like coral made of light. Then back to drywall. Then all of them at once. The floor buckles — not cracking, but <em>rippling</em>, like the building is a reflection in water and someone just threw a stone into it. Pixel's chair slides sideways. Filing cabinets topple. Forms scatter into rifts that open and close in the air like mouths. Through the chaos, Pixel sees things that her brain rejects outright — geometries that fold in on themselves, spaces that are bigger on the inside, a hallway that leads in two directions simultaneously.</p>
+   <div class="scene-break">· · ·</div>
+   <p class="pull-quote">THIS ISN'T POSSIBLE. None of this is possible.</p>
+  </div>
+  <h3 id="escalation" class="section-heading">Escalation</h3>
+  <div class="episode-text">
+   <p class="drop-cap">Pixel doesn't think. She grabs A1's espresso machine body — heavier than she remembers, warm with residual brewing heat, and for a split second his chrome surface flashes with blue light brighter than any appliance glitch — and Clive scrambles up onto her shoulder, his small legs finding purchase on her jacket, his sphere head glowing steady against her neck. Meatball is already at the door, barking at her to <em>move</em>. They run through corridors that have become nightmares — a hallway that stretches to infinity, then compresses to nothing, then is just a hallway again. DRM employees are screaming, running, some frozen in place staring at walls that have become windows into places that shouldn't exist. A filing cabinet falls into a rift and doesn't come back. The break room is gone — not destroyed, just <em>absent</em>, replaced by a space that hurts to look at.</p>
+   <p>Pixel's mind is a siren of <em>this can't be happening this can't be happening this can't be happening.</em></p>
+   <p>They reach a section of the building she's never been in. A door she's never seen. Behind it: a bay. An <em>evacuation</em> bay. With a vessel. A lifeboat. With a hatch, an engine, an actual <em>cockpit</em>. In a building she thought processed regulatory paperwork.</p>
+   <p>"What the HELL is this?" she breathes. But Meatball is already inside, and the building behind them is folding like origami, and there's no time.</p>
+   <p>She shoves A1 onto the cramped deck. Clive drops from her shoulder to the console, his feet finding purchase on the metal surface with a soft click. For a moment — just a moment — Clive's glow dims. His sphere head tilts toward the console panel beneath him, and his surface hums against the metal. Pixel sees it: a flicker of something that isn't surprise. Something that isn't recognition either. More like… home. Then Clive straightens, adjusts his fedora, and says nothing. Pixel doesn't have time to ask.</p>
+   <p>Meatball wedges himself under the single bench seat. The pre-recorded evacuation message begins: <em>"Your reality is experiencing turbulence. Please secure all personal items and maintain a calm disposition. The DRM thanks you for your service."</em></p>
+   <p>"Turbulence?!" Pixel shouts at nobody. "TURBULENCE?!"</p>
+   <p>She slams the hatch. The lifeboat's engine — something she has no name for, something that <em>hums</em> in a way engines don't — coughs to life. The vessel lurches, shudders, and then there's a sensation like being turned inside out, like every atom in her body is a radio dial being spun to a station that doesn't exist, and they punch through <em>something</em> — through the wall of whatever the world was — and into the space beyond.</p>
+   <div class="scene-break">· · ·</div>
+   <p class="pull-quote">The Interdimensional Space.</p>
+   <p>In her pocket, against her hip, Mochi pulses warm. A slow, steady warmth that Pixel attributes to adrenaline, to fear, to the heat of running. She doesn't think about it. Not yet.</p>
+   <p>The engine hums with a strange resonance — and underneath the hum, something else. An undertone that doesn't match any mechanical frequency. Pixel hears it as a texture, a color in the sound. A1 notices too — his chrome surface flickers, and for a moment his processing registers it and files it away without comment. Something old. Something that predates the engine. Something the lifeboat picked up from its surroundings and carried in, the way a resonant shell carries the memory of the frequency that made it.</p>
+   <p>Pixel presses her face to the scratched porthole and her breath stops.</p>
+   <p>It's an expanse. A vast, impossible expanse of shimmering static, light that moves like water, color that doesn't map to any spectrum she knows. Ribbons of aurora streak through the void — not light exactly, but <em>something</em>, something alive and humming, the residual echo of… she doesn't know what. Below the surface (if there is a surface), ghostly shapes drift: immense, slow-moving silhouettes that look like — she can barely form the thought — like <em>worlds</em>. Entire worlds, half-formed, flickering in and out like stations on a radio you're scrolling past too fast. The sky — if it's sky — is a deep, rolling static, beautiful and terrifying, punctuated by distant flashes where currents of color collide.</p>
+   <p>She has no words. No framework. No category for any of this. The DRM was filing forms about <em>this</em>? The boring compliance reports were about… whatever THIS is?</p>
+   <p>A1's chrome surface flickers — and for the first time, something happens that has never happened before. A faint blue glow extends from his body, just a few inches, shimmering in the air. Not a hologram. Not a glitch. Something deeper. His voice, when it comes, is different — still A1, still dry, still precise, but with an undertone of something vast and uncertain. "I… seem to know this place. I don't know how I know this. I don't have a file for this knowledge. It's not in any database I can access. But I feel…" A long pause, steam curling from his spout. "I feel like I've been here before. A very long time ago." Another pause. Then, more familiar: "Shall I make espresso? I find routine… stabilizing."</p>
+   <p>Clive's sphere dims, then pulses slowly, deliberately. Pixel reads the pattern — and this time, reading it doesn't feel strange. It feels <em>necessary</em>. It's a haiku:</p>
+   <div class="haiku">Between the stations<br>the silence hums with lost worlds<br>we drift, untuned</div>
+   <p>Her throat tightens. Her <em>desk companion</em> just wrote poetry about the void.</p>
+   <p>Meatball whimpers, then presses his warm body against Pixel's leg. She can feel him trembling — not with fear exactly, but with <em>something</em>. Like whatever they're floating in resonates with something inside him. His eyes are wide, wet, fixed on the porthole. He doesn't look scared. He looks like he's <em>listening</em>.</p>
+   <p>In Pixel's pocket, Mochi pulses again. Warmer now. Steadier. As if the void beyond the porthole is exactly where Mochi was always meant to be.</p>
+  </div>
+  <h3 id="climax" class="section-heading">Climax</h3>
+  <div class="episode-text">
+   <p class="drop-cap">The lifeboat's power fluctuates. The air recycler kicks out a smell that's equal parts toner, burnt circuitry, and Meatball's anxiety. The engine hums with that strange resonance, but the vessel has no navigation she can understand — buttons labeled with symbols she's never seen, readouts in units that don't correspond to anything she learned in school.</p>
+   <p>Pixel's mind is catching up. Slowly, terribly, the pieces are falling into place.</p>
+   <p>The DRM wasn't a regulatory compliance agency. It was never about environmental metrics or ambient variance. The forms she filed — the ones with names she never understood — they were about <em>this</em>. This expanse. These worlds. The DRM was maintaining <em>reality itself</em>, and she'd been sitting in the middle of it for years without knowing. Ninety years of institutional history, entire departments she'd never had clearance to visit, locked floors she'd assumed were storage — all of it was about keeping… whatever this is… stable. Hidden. <em>Secret.</em></p>
+   <p>And now it's gone. Not temporarily closed, not restructured. <em>Gone.</em> The agency that apparently held the fabric of existence together just crumbled like wet paper, and nobody told her what she was actually working on. Nobody told <em>anyone</em>.</p>
+   <p>She looks at A1 — an espresso machine that just admitted to memories he shouldn't have. At Clive — a knee-high robot whose sphere glowed a warning before the building fell, who wrote poetry about the void, who paused at a console panel like it felt familiar. At Meatball — a dog who's staring at an impossible expanse like he <em>understands</em> it. At the scratched porthole and the void beyond.</p>
+   <p>"Okay," she says, and her voice cracks on the word. She tries again. "Okay. So. Everything I thought was real… the office, the forms, the job… it was a cover. For <em>this</em>." She gestures at the porthole. "There's an entire… I don't even… there are <em>worlds</em> out there. The DRM knew. They always knew. And they just let me file forms about it without telling me what any of it meant."</p>
+   <p>She's shaking. Meatball presses harder against her leg.</p>
+   <p>"And now it's gone. And we're in a lifeboat that I didn't know existed, floating in a place I didn't know was real, and our crew is me, a coffee machine that's having an existential crisis, a small robot who apparently speaks in code, and the world's most empathetic dog."</p>
+   <p>Meatball's tail wags once.</p>
+   <p>"So what do we <em>do</em>?"</p>
+   <p>A1's blue glow flickers. When he speaks, it's with the careful precision she's always known — but underneath it, something else. Something that sounds almost like wonder. "I believe, Pixel, that you do what you have always done. You observe. You ask questions. You tell people what you've found."</p>
+   <p>Clive's sphere brightens: <em>BROADCAST. SOMEONE MIGHT HEAR.</em></p>
+   <p>Pixel stares at him. "You've been able to do this the whole time? The whole time I've worked here, you could <em>talk</em>?"</p>
+   <p>Clive pulses a single, emphatic flash. She reads it: <em>LATER. BROADCAST NOW.</em></p>
+   <p>Pixel looks at the lifeboat's battered communications array. It's basic — a microphone, a frequency dial, an antenna that looks like it was designed in the 1970s. But it works. She can feel it humming, tuned to something, ready to transmit into… whatever this is.</p>
+   <p>She's a data analyst who always wanted to be a journalist. She's got a story nobody's ever told. She's got a microphone. And she's got nothing left to lose.</p>
+   <p>She flips the comm switch, adjusts the dial as wide as it'll go, takes a shaking breath, and begins.</p>
+   <p>"This is… my name is Pixel Paradox. I worked at the Department of Reality Maintenance. I <em>thought</em> I worked at a regulatory agency. I was wrong. I was very, very wrong." Her voice steadies, fueled by something between fury and awe. "The DRM is gone. The building collapsed — not like a building, like… I can't explain it. Reality broke. Actually broke. And now I'm in a lifeboat in an expanse that shouldn't exist, looking at things I don't have names for, and I don't know if anyone can hear this."</p>
+   <p>She pauses. Looks at the porthole. At the ghostly shapes drifting in the deep.</p>
+   <p>"But I'm going to find out what's out there. I'm going to find out what the DRM was hiding, and why it fell, and what all those forms I filed actually meant. Someone needs to document this. Someone needs to keep a record of whatever's happening."</p>
+   <p>Another pause. Quieter now. The anger fading into something rawer.</p>
+   <div class="pull-quote">This is The Ephergent. First transmission. We're out here. We don't know where 'here' is. But we're listening. And if you can hear this… we could really use some answers.</div>
+  </div>
+  <h3 id="resolution" class="section-heading">Resolution</h3>
+  <div class="episode-text">
+   <p class="drop-cap">Static. The broadcast goes out into the Space and the Space swallows it whole. No response. No acknowledgment. Just the hum of whatever medium they're floating in and the slow, patient drift of shapes beneath them.</p>
+   <p>But A1 notices something. That blue glow — the one that flickered to life when they entered the Space — hasn't faded. It's expanded. Just slightly, just a few inches more than before. And inside him, in circuits that shouldn't hold anything but brewing temperatures and grind settings, something stirs. Not a memory exactly. More like an echo. The ghost of a corridor he's never walked. The hum of an engine he's never heard. A sense of <em>scale</em> — vast, ancient, impossible — pressing against the inside of a chrome espresso machine like a cathedral trying to fit inside a thimble. He doesn't mention it. Not yet. He's not sure it's real. He makes espresso instead, because routine is how he holds himself together while something ancient and enormous slowly wakes up inside him.</p>
+   <p>Clive settles onto the console, sphere glowing soft blue-white, fedora tilted at its usual angle. Ninety years. He's been at the DRM for ninety years, and for all of them, he kept the secrets. Followed the protocols. Communicated only in patterns obscure enough that nobody would notice — except Pixel, who noticed everything without knowing what she was noticing. His old partner, Barry Kowalski, went into the Space decades ago. The official report said "transferred." Clive knew better. Barry followed a signal. And now Clive is here too, looking at the same void, wondering if Barry found what he was looking for — and whether the answers Clive kept locked away for ninety years would have changed anything.</p>
+   <p>In Pixel's pocket, Mochi pulses warm. Steady. Patient. A warmth that Pixel still hasn't named.</p>
+   <p>Meatball curls up at Pixel's feet and sighs — a deep, contented sigh that seems impossible given the circumstances. But Meatball has always been like this. Calm when things are big. Anxious when the mailman comes. It's as if the Interdimensional Space, for all its strangeness, resonates with something in him. Something that's always been there, quiet and patient, waiting for a moment exactly like this.</p>
+   <p>Pixel leans back against the cold metal wall of the lifeboat, exhausted, terrified, furious, and weirdly exhilarated. Everything she knew was a lie. Or not a lie — a <em>cover</em>. A carefully maintained fiction. And now the fiction is shattered and the truth is an expanse of impossible light and she's broadcasting into it from a boat that smells like toner.</p>
+   <div class="scene-break">· · ·</div>
+   <p class="pull-quote">But the signal is alive. And so are they.</p>
+  </div>
+  <h2 id="characters" class="chapter-heading">The Crew</h2>
+  <div class="character-card">
+   <strong>Pixel Paradox</strong>
+   <p>Transitions from bored, oblivious data analyst to accidental broadcaster. She had no idea what the DRM really was — filed forms she didn't understand, worked in a building with locked floors she assumed were storage, never questioned any of it. She's not special in any supernatural sense; she's just observant, analytical, and stubborn enough to notice patterns others ignore. Her first broadcast isn't polished or planned. It's raw, confused, and angry. And that's what makes it real.</p>
+  </div>
+  <div class="character-card">
+   <strong>A1</strong>
+   <p>Until today, he was an espresso machine. A very good one. Suspiciously good — coffee that anticipated your mood, the occasional blue glitch, an oddly sophisticated vocabulary. But the rupture cracked something open in him. In the Interdimensional Space, buried instincts are surfacing — fragments of knowledge he can't explain, echoes of a vastness that shouldn't fit inside chrome and circuits. He's not ready to name it. He makes espresso instead, because routine is how he holds himself together while something ancient and enormous slowly wakes up inside him.</p>
+  </div>
+  <div class="character-card">
+   <strong>Clive</strong>
+   <p>The keeper of secrets. Ninety years at the DRM, and he knew <em>everything</em> — the real mission, the frequencies, the architecture, all of it. Bound by protocols older than Pixel's grandmother, communicating only in light patterns too subtle for anyone to decode. Except Pixel decoded them anyway, casually, without realizing she was doing anything unusual. Now the DRM is gone, the protocols are ash, and Clive is free to say what he's always known — one glow pattern at a time.</p>
+  </div>
+  <div class="character-card">
+   <strong>Mochi</strong>
+   <p>In Pixel's pocket, warm and patient, present from the very first moment. Pixel notices the warmth and attributes it to adrenaline, to body heat, to anything other than what it is. Mochi doesn't speak. Mochi doesn't act. Mochi simply is — warm, steady, tuned to something in the void that nobody else can name. The crew won't understand this for two more seasons.</p>
+  </div>
+  <div class="character-card">
+   <strong>Meatball</strong>
+   <p>A good dog in a strange situation. He's always been unusually perceptive — staring at empty corners, perking up at sounds nobody else heard. But in the Interdimensional Space, Meatball is calm when he shouldn't be, attentive when he should be scared. The crew's emotional anchor, processing the impossible with a sigh and a tail wag.</p>
+  </div>
+  <h2 id="tags" class="chapter-heading" style="margin-top:3rem">Transmission Tags</h2>
+  <div class="tag-list">
+   <span class="tag">reality_rupture</span>
+   <span class="tag">drm_collapse</span>
+   <span class="tag">interdimensional_space</span>
+   <span class="tag">lifeboat</span>
+   <span class="tag">first_broadcast</span>
+   <span class="tag">pilot_episode</span>
+   <span class="tag">frequency_model</span>
+   <span class="tag">quantum_static</span>
+   <span class="tag">found_family</span>
+   <span class="tag">the_drift</span>
+   <span class="tag">phase_shifter</span>
+   <span class="tag">prime_material</span>
+   <span class="tag">unaware_crew</span>
+   <span class="tag">first_contact</span>
+   <span class="tag">clive_wall_panel_recognition</span>
+   <span class="tag">mochi_first_warmth</span>
+   <span class="tag">ephergent_frequency_beat</span>
+   <span class="tag">barry_deliberate_departure</span>
+  </div>
+ </div>
+</div>
+</main> <script type="module">(function(){if(!window.matchMedia("(pointer: coarse)").matches){var t=document.getElementById("cursor-dot");t&&(document.addEventListener("mousemove",function(e){t.style.transform="translate("+e.clientX+"px, "+e.clientY+"px)"}),document.querySelectorAll('a, button, [role="button"], input, textarea, select').forEach(function(e){e.addEventListener("mouseenter",function(){t.classList.add("cursor-hover")}),e.addEventListener("mouseleave",function(){t.classList.remove("cursor-hover")})}))}})());</script>
+<script>
+// Progress bar + chapter nav active state
+(function(){
+  var bar = document.getElementById('reading-progress');
+  var navLinks = document.querySelectorAll('.chapter-nav a');
+  var chapters = ['synopsis','opening','escalation','climax','resolution','characters','tags'];
+  function update() {
+    var scrollTop = window.scrollY;
+    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    if (bar) bar.style.width = pct + '%';
+    // Active chapter
+    chapters.forEach(function(id) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      var top = el.getBoundingClientRect().top;
+      if (top <= 120) {
+        navLinks.forEach(function(a) {
+          a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+        });
+      }
+    });
+  }
+  window.addEventListener('scroll', update, {passive:true});
+  update();
+})();
+</script>
+</body></html>
