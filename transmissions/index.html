@@ -2,8 +2,600 @@
 <style>.terminal-container[data-astro-cid-y4rsztkj]{background:#08080d;min-height:100vh;position:relative}.scanlines[data-astro-cid-y4rsztkj]{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1000;background:repeating-linear-gradient(0deg,rgba(0,0,0,.15) 0px,rgba(0,0,0,.15) 1px,transparent 1px,transparent 2px)}.font-mono[data-astro-cid-y4rsztkj]{font-family:JetBrains Mono,monospace}
 </style></head> <body class="bg-bg-deep text-text-primary font-body antialiased min-h-screen flex flex-col"> <header class="fixed top-0 left-0 right-0 z-50 border-b border-border-subtle bg-bg-deep/90 backdrop-blur-sm" data-astro-cid-3ef6ksr2> <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between" data-astro-cid-3ef6ksr2> <a href="/" class="font-display font-bold text-xl text-text-primary tracking-tight hover:text-accent-cyan transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-accent-cyan rounded" data-astro-cid-3ef6ksr2>
 EPHERGENT
-</a> <div class="hidden md:flex items-center gap-8" data-astro-cid-3ef6ksr2> <a href="/games/" class="text-text-secondary hover:text-accent-cyan transition-colors duration-300 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-accent-cyan rounded" data-astro-cid-3ef6ksr2>Games</a> <a href="/journal/" class="text-text-secondary hover:text-accent-cyan transition-colors duration-300 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-accent-cyan rounded" data-astro-cid-3ef6ksr2>Journal</a> <a href="/crew/" class="text-text-secondary hover:text-accent-cyan transition-colors duration-300 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-accent-cyan rounded" data-astro-cid-3ef6ksr2>Crew</a> <a href="/atlas/" class="text-text-secondary hover:text-accent-cyan transition-colors duration-300 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-accent-cyan rounded" data-astro-cid-3ef6ksr2>Lore Atlas</a> <a href="/transmissions/" class="text-text-secondary hover:text-accent-cyan transition-colors duration-300 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-accent-cyan rounded" data-astro-cid-3ef6ksr2>Transmissions</a> </div> <div class="flex items-center gap-4" data-astro-cid-3ef6ksr2> <!-- Mobile hamburger button --> <button id="mobile-menu-btn" class="md:hidden relative w-8 h-8 flex items-center justify-center cursor-pointer text-text-primary" aria-label="Open menu" data-astro-cid-3ef6ksr2> <span class="hamburger-line hamburger-top" data-astro-cid-3ef6ksr2></span> <span class="hamburger-line hamburger-mid" data-astro-cid-3ef6ksr2></span> <span class="hamburger-line hamburger-bot" data-astro-cid-3ef6ksr2></span> </button> </div> </nav> </header> <!-- Mobile menu backdrop --> <div id="mobile-backdrop" class="fixed inset-0 bg-black/50 z-[998] opacity-0 pointer-events-none transition-opacity duration-300" data-astro-cid-3ef6ksr2></div> <!-- Mobile menu panel --> <nav id="mobile-menu" class="fixed top-0 right-0 w-[75%] max-w-[320px] h-full bg-bg-deep/95 backdrop-blur-xl z-[999] transform translate-x-full transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] flex flex-col pt-20 px-8 gap-6" data-astro-cid-3ef6ksr2> <a href="/games/" class="text-lg text-text-primary/80 hover:text-accent-cyan transition-colors mobile-link" data-astro-cid-3ef6ksr2>Games</a> <a href="/journal/" class="text-lg text-text-primary/80 hover:text-accent-cyan transition-colors mobile-link" data-astro-cid-3ef6ksr2>Journal</a> <a href="/crew/" class="text-lg text-text-primary/80 hover:text-accent-cyan transition-colors mobile-link" data-astro-cid-3ef6ksr2>Crew</a> <a href="/atlas/" class="text-lg text-text-primary/80 hover:text-accent-cyan transition-colors mobile-link" data-astro-cid-3ef6ksr2>Lore Atlas</a> <a href="/transmissions/" class="text-lg text-text-primary/80 hover:text-accent-cyan transition-colors mobile-link" data-astro-cid-3ef6ksr2>Transmissions</a> <div class="mt-auto mb-8" data-astro-cid-3ef6ksr2> <p class="text-xs text-text-secondary" data-astro-cid-3ef6ksr2>Ephergent v1.0</p> </div> </nav>  <script type="module">const s=document.getElementById("mobile-menu-btn"),n=document.getElementById("mobile-menu"),t=document.getElementById("mobile-backdrop");function o(){if(!n||!t||!s)return;const e=n.classList.toggle("open");n.classList.toggle("translate-x-full",!e),n.classList.toggle("translate-x-0",e),t.classList.toggle("opacity-0",!e),t.classList.toggle("opacity-100",e),t.classList.toggle("pointer-events-none",!e),t.classList.toggle("pointer-events-auto",e),s.classList.toggle("menu-open",e),s.setAttribute("aria-label",e?"Close menu":"Open menu"),document.body.style.overflow=e?"hidden":""}s?.addEventListener("click",o);t?.addEventListener("click",o);</script> <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div> <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-0 focus:left-0 focus:z-[10000] focus:bg-accent-cyan focus:text-bg-deep focus:px-4 focus:py-2 focus:text-sm focus:font-semibold">Skip to main content</a> <main id="main-content" class="flex-1 pt-[73px]">  <div class="terminal-container min-h-screen font-mono" data-astro-cid-y4rsztkj> <div class="scanlines" aria-hidden="true" data-astro-cid-y4rsztkj></div> <main class="max-w-6xl mx-auto p-6 md:p-12" data-astro-cid-y4rsztkj> <!-- Header --> <header class="mb-12" data-astro-cid-y4rsztkj> <div class="text-xs mb-2" style="color: #ffb020;" data-astro-cid-y4rsztkj>EPHERGENT STATION // TRANSMISSION ARCHIVE</div> <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4" style="color: #00e676;" data-astro-cid-y4rsztkj>TRANSMISSION LOG</h1> <p class="text-lg max-w-2xl" style="color: #9090b0;" data-astro-cid-y4rsztkj>
+</a> <div class="hidden md:flex items-center gap-8" data-astro-cid-3ef6ksr2> <a href="/games/" class="text-text-secondary hover:text-accent-cyan transition-colors duration-300 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-accent-cyan rounded" data-astro-cid-3ef6ksr2>Games</a> <a href="/transmissions/" class="text-text-secondary hover:text-accent-cyan transition-colors duration-300 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-accent-cyan rounded" data-astro-cid-3ef6ksr2>Transmissions</a> <a href="/crew/" class="text-text-secondary hover:text-accent-cyan transition-colors duration-300 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-accent-cyan rounded" data-astro-cid-3ef6ksr2>Crew</a> <a href="/atlas/" class="text-text-secondary hover:text-accent-cyan transition-colors duration-300 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-accent-cyan rounded" data-astro-cid-3ef6ksr2>Lore Atlas</a> <a href="/transmissions/" class="text-text-secondary hover:text-accent-cyan transition-colors duration-300 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-accent-cyan rounded" data-astro-cid-3ef6ksr2>Transmissions</a> </div> <div class="flex items-center gap-4" data-astro-cid-3ef6ksr2> <!-- Mobile hamburger button --> <button id="mobile-menu-btn" class="md:hidden relative w-8 h-8 flex items-center justify-center cursor-pointer text-text-primary" aria-label="Open menu" data-astro-cid-3ef6ksr2> <span class="hamburger-line hamburger-top" data-astro-cid-3ef6ksr2></span> <span class="hamburger-line hamburger-mid" data-astro-cid-3ef6ksr2></span> <span class="hamburger-line hamburger-bot" data-astro-cid-3ef6ksr2></span> </button> </div> </nav> </header> <!-- Mobile menu backdrop --> <div id="mobile-backdrop" class="fixed inset-0 bg-black/50 z-[998] opacity-0 pointer-events-none transition-opacity duration-300" data-astro-cid-3ef6ksr2></div> <!-- Mobile menu panel --> <nav id="mobile-menu" class="fixed top-0 right-0 w-[75%] max-w-[320px] h-full bg-bg-deep/95 backdrop-blur-xl z-[999] transform translate-x-full transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] flex flex-col pt-20 px-8 gap-6" data-astro-cid-3ef6ksr2> <a href="/games/" class="text-lg text-text-primary/80 hover:text-accent-cyan transition-colors mobile-link" data-astro-cid-3ef6ksr2>Games</a> <a href="/transmissions/" class="text-lg text-text-primary/80 hover:text-accent-cyan transition-colors mobile-link" data-astro-cid-3ef6ksr2>Transmissions</a> <a href="/crew/" class="text-lg text-text-primary/80 hover:text-accent-cyan transition-colors mobile-link" data-astro-cid-3ef6ksr2>Crew</a> <a href="/atlas/" class="text-lg text-text-primary/80 hover:text-accent-cyan transition-colors mobile-link" data-astro-cid-3ef6ksr2>Lore Atlas</a> <a href="/transmissions/" class="text-lg text-text-primary/80 hover:text-accent-cyan transition-colors mobile-link" data-astro-cid-3ef6ksr2>Transmissions</a> <div class="mt-auto mb-8" data-astro-cid-3ef6ksr2> <p class="text-xs text-text-secondary" data-astro-cid-3ef6ksr2>Ephergent v1.0</p> </div> </nav>  <script type="module">const s=document.getElementById("mobile-menu-btn"),n=document.getElementById("mobile-menu"),t=document.getElementById("mobile-backdrop");function o(){if(!n||!t||!s)return;const e=n.classList.toggle("open");n.classList.toggle("translate-x-full",!e),n.classList.toggle("translate-x-0",e),t.classList.toggle("opacity-0",!e),t.classList.toggle("opacity-100",e),t.classList.toggle("pointer-events-none",!e),t.classList.toggle("pointer-events-auto",e),s.classList.toggle("menu-open",e),s.setAttribute("aria-label",e?"Close menu":"Open menu"),document.body.style.overflow=e?"hidden":""}s?.addEventListener("click",o);t?.addEventListener("click",o);</script> <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div> <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-0 focus:left-0 focus:z-[10000] focus:bg-accent-cyan focus:text-bg-deep focus:px-4 focus:py-2 focus:text-sm focus:font-semibold">Skip to main content</a> <main id="main-content" class="flex-1 pt-[73px]">  <div class="terminal-container min-h-screen font-mono" data-astro-cid-y4rsztkj> <div class="scanlines" aria-hidden="true" data-astro-cid-y4rsztkj></div> <main class="max-w-6xl mx-auto p-6 md:p-12" data-astro-cid-y4rsztkj> <!-- Header --> <header class="mb-12" data-astro-cid-y4rsztkj> <div class="text-xs mb-2" style="color: #ffb020;" data-astro-cid-y4rsztkj>EPHERGENT STATION // TRANSMISSION ARCHIVE</div> <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4" style="color: #00e676;" data-astro-cid-y4rsztkj>TRANSMISSION LOG</h1> <p class="text-lg max-w-2xl" style="color: #9090b0;" data-astro-cid-y4rsztkj>
 Archived broadcasts from the crew of The Ephergent.
-Current log contains 1 transmissions across 1 seasons. </p> </header> <div class="rounded-lg p-4 mb-12" style="background: rgba(255, 176, 32, 0.05); border: 1px solid rgba(255, 176, 32, 0.3);" data-astro-cid-y4rsztkj> <div class="text-xs mb-2" style="color: #ffb020;" data-astro-cid-y4rsztkj> LATEST TRANSMISSION</div> <div class="flex items-center gap-4" data-astro-cid-y4rsztkj> <span class="font-bold text-lg" style="color: #00e676;" data-astro-cid-y4rsztkj>S1E01</span> <span style="color: #9090b0;" data-astro-cid-y4rsztkj>|</span> <span class="text-sm" style="color: #ffb020;" data-astro-cid-y4rsztkj>Cycle 1.001</span> </div> <a href="/transmissions/S01E01_the_day_the_dial_broke/" class="text-xl mt-2 inline-block" style="color: #e8e8f0;" data-astro-cid-y4rsztkj> Episode 01 </a> </div> <!-- Season Archives --> <section class="season-archive mb-12" aria-label="Season 1" data-astro-cid-y4rsztkj> <div class="flex items-center gap-4 mb-6" data-astro-cid-y4rsztkj> <h2 class="text-2xl tracking-wider" style="color: #00d4ff;" data-astro-cid-y4rsztkj>SEASON 1</h2> <div class="flex-1 h-px" style="background: #2a2a3a;" data-astro-cid-y4rsztkj></div> <span class="text-sm" style="color: #9090b0;" data-astro-cid-y4rsztkj>1 transmissions</span> </div> <div class="grid gap-3" data-astro-cid-y4rsztkj> <article class="rounded-lg p-4 transition-all" style="background: rgba(18, 18, 25, 0.3); border: 1px solid #2a2a3a;" data-astro-cid-y4rsztkj> <div class="flex flex-wrap items-center gap-x-6 gap-y-2" data-astro-cid-y4rsztkj> <div class="flex items-center gap-3" data-astro-cid-y4rsztkj> <span class="font-bold" style="color: #00e676;" data-astro-cid-y4rsztkj>S1E01</span> <span class="text-sm" style="color: #ffb020;" data-astro-cid-y4rsztkj>Cycle 1.001</span> </div> <div class="flex-1 min-w-[200px]" data-astro-cid-y4rsztkj> <a href="/transmissions/S01E01_the_day_the_dial_broke/" class="text-lg" style="color: #e8e8f0;" data-astro-cid-y4rsztkj> Episode 01 </a> </div> <div class="flex items-center gap-3" data-astro-cid-y4rsztkj> <span class="text-xs" style="color: #9090b0;" data-astro-cid-y4rsztkj>narrated by unknown</span> <a href="/transmissions/S01E01_the_day_the_dial_broke/" class="text-sm transition-colors" style="color: #00d4ff;" data-astro-cid-y4rsztkj>
+Current log contains 37 transmissions across 3 seasons. </p> </header> <div class="rounded-lg 
+ <div class="rounded-lg p-4 mb-12" style="background: rgba(255, 176, 32, 0.05); border: 1px solid rgba(255, 176, 32, 0.3);" data-astro-cid-y4rsztkj>
+  <div class="text-xs mb-2" style="color: #ffb020;" data-astro-cid-y4rsztkj> LATEST TRANSMISSION</div>
+  <div class="flex items-center gap-4" data-astro-cid-y4rsztkj>
+    <span class="font-bold text-lg" style="color: #00e676;" data-astro-cid-y4rsztkj>S3E10</span>
+    <span style="color: #9090b0;" data-astro-cid-y4rsztkj>|</span>
+    <span class="text-sm" style="color: #ffb020;" data-astro-cid-y4rsztkj>Cycle 892.017</span>
+  </div>
+  <a href="/transmissions/S03E10_the_signal_was_us_all_along/" class="text-xl mt-2 inline-block" style="color: #e8e8f0;" data-astro-cid-y4rsztkj>the signal was us all along</a>
+ </div>
+ <section class="season-archive mb-12" aria-label="SEASON 1" data-astro-cid-y4rsztkj>
+  <div class="flex items-center gap-4 mb-6" data-astro-cid-y4rsztkj>
+    <h2 class="text-2xl tracking-wider" style="color: #00d4ff;" data-astro-cid-y4rsztkj>SEASON 1</h2>
+    <div class="flex-1 h-px" style="background: #2a2a3a;" data-astro-cid-y4rsztkj></div>
+    <span class="text-sm" style="color: #9090b0;" data-astro-cid-y4rsztkj>17 transmissions</span>
+  </div>
+  <div class="grid gap-3" data-astro-cid-y4rsztkj>
+
+  <article class="rounded-lg p-4 transition-all" style="background: rgba(18, 18, 25, 0.3); border: 1px solid #2a2a3a;" data-astro-cid-y4rsztkj>
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-2" data-astro-cid-y4rsztkj>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <span class="font-bold" style="color: #00e676;" data-astro-cid-y4rsztkj>S1E01</span>
+      </div>
+      <div class="flex-1 min-w-[200px]" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S01E01_the_day_the_dial_broke/" class="text-lg" style="color: #e8e8f0;" data-astro-cid-y4rsztkj>the day the dial broke</a>
+      </div>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S01E01_the_day_the_dial_broke/" class="text-sm transition-colors" style="color: #00d4ff;" data-astro-cid-y4rsztkj>
 [ACCESS]
-</a> </div> </div> </article> </div> </section>  <!-- Footer --> <footer class="mt-16 pt-8" style="border-top: 1px solid #2a2a3a;" data-astro-cid-y4rsztkj> <div class="flex flex-wrap gap-4 text-xs" style="color: #9090b0;" data-astro-cid-y4rsztkj> <span style="color: #00e676;" data-astro-cid-y4rsztkj> ARCHIVE ONLINE</span> <span data-astro-cid-y4rsztkj>|</span> <span data-astro-cid-y4rsztkj>TOTAL TRANSMISSIONS: 1</span> <span data-astro-cid-y4rsztkj>|</span> <span data-astro-cid-y4rsztkj>STORAGE: NOMINAL</span> </div> </footer> </main> </div>  </main> <script type="module">(function(){if(!window.matchMedia("(pointer: coarse)").matches){var t=document.getElementById("cursor-dot");t&&(document.addEventListener("mousemove",function(e){t.style.transform="translate("+e.clientX+"px, "+e.clientY+"px)"}),document.querySelectorAll('a, button, [role="button"], input, textarea, select').forEach(function(e){e.addEventListener("mouseenter",function(){t.classList.add("cursor-hover")}),e.addEventListener("mouseleave",function(){t.classList.remove("cursor-hover")})}))}})();</script> </body> </html> 
+</a>
+      </div>
+    </div>
+  </article>
+  <article class="rounded-lg p-4 transition-all" style="background: rgba(18, 18, 25, 0.3); border: 1px solid #2a2a3a;" data-astro-cid-y4rsztkj>
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-2" data-astro-cid-y4rsztkj>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <span class="font-bold" style="color: #00e676;" data-astro-cid-y4rsztkj>S1E02</span>
+      </div>
+      <div class="flex-1 min-w-[200px]" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S01E02_ruins_ripples/" class="text-lg" style="color: #e8e8f0;" data-astro-cid-y4rsztkj>ruins ripples</a>
+      </div>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S01E02_ruins_ripples/" class="text-sm transition-colors" style="color: #00d4ff;" data-astro-cid-y4rsztkj>
+[ACCESS]
+</a>
+      </div>
+    </div>
+  </article>
+  <article class="rounded-lg p-4 transition-all" style="background: rgba(18, 18, 25, 0.3); border: 1px solid #2a2a3a;" data-astro-cid-y4rsztkj>
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-2" data-astro-cid-y4rsztkj>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <span class="font-bold" style="color: #00e676;" data-astro-cid-y4rsztkj>S1E03</span>
+      </div>
+      <div class="flex-1 min-w-[200px]" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S01E03_the_drm_archive/" class="text-lg" style="color: #e8e8f0;" data-astro-cid-y4rsztkj>the drm archive</a>
+      </div>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S01E03_the_drm_archive/" class="text-sm transition-colors" style="color: #00d4ff;" data-astro-cid-y4rsztkj>
+[ACCESS]
+</a>
+      </div>
+    </div>
+  </article>
+  <article class="rounded-lg p-4 transition-all" style="background: rgba(18, 18, 25, 0.3); border: 1px solid #2a2a3a;" data-astro-cid-y4rsztkj>
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-2" data-astro-cid-y4rsztkj>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <span class="font-bold" style="color: #00e676;" data-astro-cid-y4rsztkj>S1E04</span>
+      </div>
+      <div class="flex-1 min-w-[200px]" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S01E04_when_the_moon_stopped_weeping/" class="text-lg" style="color: #e8e8f0;" data-astro-cid-y4rsztkj>when the moon stopped weeping</a>
+      </div>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S01E04_when_the_moon_stopped_weeping/" class="text-sm transition-colors" style="color: #00d4ff;" data-astro-cid-y4rsztkj>
+[ACCESS]
+</a>
+      </div>
+    </div>
+  </article>
+  <article class="rounded-lg p-4 transition-all" style="background: rgba(18, 18, 25, 0.3); border: 1px solid #2a2a3a;" data-astro-cid-y4rsztkj>
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-2" data-astro-cid-y4rsztkj>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <span class="font-bold" style="color: #00e676;" data-astro-cid-y4rsztkj>S1E05</span>
+      </div>
+      <div class="flex-1 min-w-[200px]" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S01E05_root_and_branch/" class="text-lg" style="color: #e8e8f0;" data-astro-cid-y4rsztkj>root and branch</a>
+      </div>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S01E05_root_and_branch/" class="text-sm transition-colors" style="color: #00d4ff;" data-astro-cid-y4rsztkj>
+[ACCESS]
+</a>
+      </div>
+    </div>
+  </article>
+  <article class="rounded-lg p-4 transition-all" style="background: rgba(18, 18, 25, 0.3); border: 1px solid #2a2a3a;" data-astro-cid-y4rsztkj>
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-2" data-astro-cid-y4rsztkj>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <span class="font-bold" style="color: #00e676;" data-astro-cid-y4rsztkj>S1E05</span>
+      </div>
+      <div class="flex-1 min-w-[200px]" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S01E05_the_clockwork_unraveling/" class="text-lg" style="color: #e8e8f0;" data-astro-cid-y4rsztkj>the clockwork unraveling</a>
+      </div>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S01E05_the_clockwork_unraveling/" class="text-sm transition-colors" style="color: #00d4ff;" data-astro-cid-y4rsztkj>
+[ACCESS]
+</a>
+      </div>
+    </div>
+  </article>
+  <article class="rounded-lg p-4 transition-all" style="background: rgba(18, 18, 25, 0.3); border: 1px solid #2a2a3a;" data-astro-cid-y4rsztkj>
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-2" data-astro-cid-y4rsztkj>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <span class="font-bold" style="color: #00e676;" data-astro-cid-y4rsztkj>S1E06</span>
+      </div>
+      <div class="flex-1 min-w-[200px]" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S01E06_the_song_at_the_edge_of_everything/" class="text-lg" style="color: #e8e8f0;" data-astro-cid-y4rsztkj>the song at the edge of everything</a>
+      </div>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S01E06_the_song_at_the_edge_of_everything/" class="text-sm transition-colors" style="color: #00d4ff;" data-astro-cid-y4rsztkj>
+[ACCESS]
+</a>
+      </div>
+    </div>
+  </article>
+  <article class="rounded-lg p-4 transition-all" style="background: rgba(18, 18, 25, 0.3); border: 1px solid #2a2a3a;" data-astro-cid-y4rsztkj>
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-2" data-astro-cid-y4rsztkj>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <span class="font-bold" style="color: #00e676;" data-astro-cid-y4rsztkj>S1E07</span>
+      </div>
+      <div class="flex-1 min-w-[200px]" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S01E07_that_which_emerges/" class="text-lg" style="color: #e8e8f0;" data-astro-cid-y4rsztkj>that which emerges</a>
+      </div>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S01E07_that_which_emerges/" class="text-sm transition-colors" style="color: #00d4ff;" data-astro-cid-y4rsztkj>
+[ACCESS]
+</a>
+      </div>
+    </div>
+  </article>
+  <article class="rounded-lg p-4 transition-all" style="background: rgba(18, 18, 25, 0.3); border: 1px solid #2a2a3a;" data-astro-cid-y4rsztkj>
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-2" data-astro-cid-y4rsztkj>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <span class="font-bold" style="color: #00e676;" data-astro-cid-y4rsztkj>S1E08</span>
+      </div>
+      <div class="flex-1 min-w-[200px]" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S01E08_learning_to_be_large/" class="text-lg" style="color: #e8e8f0;" data-astro-cid-y4rsztkj>learning to be large</a>
+      </div>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S01E08_learning_to_be_large/" class="text-sm transition-colors" style="color: #00d4ff;" data-astro-cid-y4rsztkj>
+[ACCESS]
+</a>
+      </div>
+    </div>
+  </article>
+  <article class="rounded-lg p-4 transition-all" style="background: rgba(18, 18, 25, 0.3); border: 1px solid #2a2a3a;" data-astro-cid-y4rsztkj>
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-2" data-astro-cid-y4rsztkj>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <span class="font-bold" style="color: #00e676;" data-astro-cid-y4rsztkj>S1E09</span>
+      </div>
+      <div class="flex-1 min-w-[200px]" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S01E09_the_sound_that_wants_to_come_home/" class="text-lg" style="color: #e8e8f0;" data-astro-cid-y4rsztkj>the sound that wants to come home</a>
+      </div>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S01E09_the_sound_that_wants_to_come_home/" class="text-sm transition-colors" style="color: #00d4ff;" data-astro-cid-y4rsztkj>
+[ACCESS]
+</a>
+      </div>
+    </div>
+  </article>
+  <article class="rounded-lg p-4 transition-all" style="background: rgba(18, 18, 25, 0.3); border: 1px solid #2a2a3a;" data-astro-cid-y4rsztkj>
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-2" data-astro-cid-y4rsztkj>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <span class="font-bold" style="color: #00e676;" data-astro-cid-y4rsztkj>S1E10</span>
+      </div>
+      <div class="flex-1 min-w-[200px]" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S01E10_barrys_desk/" class="text-lg" style="color: #e8e8f0;" data-astro-cid-y4rsztkj>barrys desk</a>
+      </div>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S01E10_barrys_desk/" class="text-sm transition-colors" style="color: #00d4ff;" data-astro-cid-y4rsztkj>
+[ACCESS]
+</a>
+      </div>
+    </div>
+  </article>
+  <article class="rounded-lg p-4 transition-all" style="background: rgba(18, 18, 25, 0.3); border: 1px solid #2a2a3a;" data-astro-cid-y4rsztkj>
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-2" data-astro-cid-y4rsztkj>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <span class="font-bold" style="color: #00e676;" data-astro-cid-y4rsztkj>S1E11</span>
+      </div>
+      <div class="flex-1 min-w-[200px]" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S01E11_toll_roads_and_trade_winds/" class="text-lg" style="color: #e8e8f0;" data-astro-cid-y4rsztkj>toll roads and trade winds</a>
+      </div>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S01E11_toll_roads_and_trade_winds/" class="text-sm transition-colors" style="color: #00d4ff;" data-astro-cid-y4rsztkj>
+[ACCESS]
+</a>
+      </div>
+    </div>
+  </article>
+  <article class="rounded-lg p-4 transition-all" style="background: rgba(18, 18, 25, 0.3); border: 1px solid #2a2a3a;" data-astro-cid-y4rsztkj>
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-2" data-astro-cid-y4rsztkj>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <span class="font-bold" style="color: #00e676;" data-astro-cid-y4rsztkj>S1E12</span>
+      </div>
+      <div class="flex-1 min-w-[200px]" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S01E12_wreckage_and_will/" class="text-lg" style="color: #e8e8f0;" data-astro-cid-y4rsztkj>wreckage and will</a>
+      </div>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S01E12_wreckage_and_will/" class="text-sm transition-colors" style="color: #00d4ff;" data-astro-cid-y4rsztkj>
+[ACCESS]
+</a>
+      </div>
+    </div>
+  </article>
+  <article class="rounded-lg p-4 transition-all" style="background: rgba(18, 18, 25, 0.3); border: 1px solid #2a2a3a;" data-astro-cid-y4rsztkj>
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-2" data-astro-cid-y4rsztkj>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <span class="font-bold" style="color: #00e676;" data-astro-cid-y4rsztkj>S1E13</span>
+      </div>
+      <div class="flex-1 min-w-[200px]" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S01E13_meatballs_frequency/" class="text-lg" style="color: #e8e8f0;" data-astro-cid-y4rsztkj>meatballs frequency</a>
+      </div>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S01E13_meatballs_frequency/" class="text-sm transition-colors" style="color: #00d4ff;" data-astro-cid-y4rsztkj>
+[ACCESS]
+</a>
+      </div>
+    </div>
+  </article>
+  <article class="rounded-lg p-4 transition-all" style="background: rgba(18, 18, 25, 0.3); border: 1px solid #2a2a3a;" data-astro-cid-y4rsztkj>
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-2" data-astro-cid-y4rsztkj>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <span class="font-bold" style="color: #00e676;" data-astro-cid-y4rsztkj>S1E14</span>
+      </div>
+      <div class="flex-1 min-w-[200px]" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S01E14_toll_roads_and_trade_winds/" class="text-lg" style="color: #e8e8f0;" data-astro-cid-y4rsztkj>toll roads and trade winds</a>
+      </div>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S01E14_toll_roads_and_trade_winds/" class="text-sm transition-colors" style="color: #00d4ff;" data-astro-cid-y4rsztkj>
+[ACCESS]
+</a>
+      </div>
+    </div>
+  </article>
+  <article class="rounded-lg p-4 transition-all" style="background: rgba(18, 18, 25, 0.3); border: 1px solid #2a2a3a;" data-astro-cid-y4rsztkj>
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-2" data-astro-cid-y4rsztkj>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <span class="font-bold" style="color: #00e676;" data-astro-cid-y4rsztkj>S1E15</span>
+      </div>
+      <div class="flex-1 min-w-[200px]" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S01E15_wreckage_and_will/" class="text-lg" style="color: #e8e8f0;" data-astro-cid-y4rsztkj>wreckage and will</a>
+      </div>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S01E15_wreckage_and_will/" class="text-sm transition-colors" style="color: #00d4ff;" data-astro-cid-y4rsztkj>
+[ACCESS]
+</a>
+      </div>
+    </div>
+  </article>
+  <article class="rounded-lg p-4 transition-all" style="background: rgba(18, 18, 25, 0.3); border: 1px solid #2a2a3a;" data-astro-cid-y4rsztkj>
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-2" data-astro-cid-y4rsztkj>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <span class="font-bold" style="color: #00e676;" data-astro-cid-y4rsztkj>S1E16</span>
+      </div>
+      <div class="flex-1 min-w-[200px]" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S01E16_the_signal_and_the_space/" class="text-lg" style="color: #e8e8f0;" data-astro-cid-y4rsztkj>the signal and the space</a>
+      </div>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S01E16_the_signal_and_the_space/" class="text-sm transition-colors" style="color: #00d4ff;" data-astro-cid-y4rsztkj>
+[ACCESS]
+</a>
+      </div>
+    </div>
+  </article>
+  </div>
+ </section>
+ <section class="season-archive mb-12" aria-label="SEASON 2" data-astro-cid-y4rsztkj>
+  <div class="flex items-center gap-4 mb-6" data-astro-cid-y4rsztkj>
+    <h2 class="text-2xl tracking-wider" style="color: #00d4ff;" data-astro-cid-y4rsztkj>SEASON 2</h2>
+    <div class="flex-1 h-px" style="background: #2a2a3a;" data-astro-cid-y4rsztkj></div>
+    <span class="text-sm" style="color: #9090b0;" data-astro-cid-y4rsztkj>10 transmissions</span>
+  </div>
+  <div class="grid gap-3" data-astro-cid-y4rsztkj>
+
+  <article class="rounded-lg p-4 transition-all" style="background: rgba(18, 18, 25, 0.3); border: 1px solid #2a2a3a;" data-astro-cid-y4rsztkj>
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-2" data-astro-cid-y4rsztkj>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <span class="font-bold" style="color: #00e676;" data-astro-cid-y4rsztkj>S2E01</span>
+      </div>
+      <div class="flex-1 min-w-[200px]" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S02E01_first_station/" class="text-lg" style="color: #e8e8f0;" data-astro-cid-y4rsztkj>first station</a>
+      </div>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S02E01_first_station/" class="text-sm transition-colors" style="color: #00d4ff;" data-astro-cid-y4rsztkj>
+[ACCESS]
+</a>
+      </div>
+    </div>
+  </article>
+  <article class="rounded-lg p-4 transition-all" style="background: rgba(18, 18, 25, 0.3); border: 1px solid #2a2a3a;" data-astro-cid-y4rsztkj>
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-2" data-astro-cid-y4rsztkj>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <span class="font-bold" style="color: #00e676;" data-astro-cid-y4rsztkj>S2E02</span>
+      </div>
+      <div class="flex-1 min-w-[200px]" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S02E02_the_color_of_forgetting/" class="text-lg" style="color: #e8e8f0;" data-astro-cid-y4rsztkj>the color of forgetting</a>
+      </div>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S02E02_the_color_of_forgetting/" class="text-sm transition-colors" style="color: #00d4ff;" data-astro-cid-y4rsztkj>
+[ACCESS]
+</a>
+      </div>
+    </div>
+  </article>
+  <article class="rounded-lg p-4 transition-all" style="background: rgba(18, 18, 25, 0.3); border: 1px solid #2a2a3a;" data-astro-cid-y4rsztkj>
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-2" data-astro-cid-y4rsztkj>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <span class="font-bold" style="color: #00e676;" data-astro-cid-y4rsztkj>S2E03</span>
+      </div>
+      <div class="flex-1 min-w-[200px]" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S02E03_meatballs_frequency/" class="text-lg" style="color: #e8e8f0;" data-astro-cid-y4rsztkj>meatballs frequency</a>
+      </div>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S02E03_meatballs_frequency/" class="text-sm transition-colors" style="color: #00d4ff;" data-astro-cid-y4rsztkj>
+[ACCESS]
+</a>
+      </div>
+    </div>
+  </article>
+  <article class="rounded-lg p-4 transition-all" style="background: rgba(18, 18, 25, 0.3); border: 1px solid #2a2a3a;" data-astro-cid-y4rsztkj>
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-2" data-astro-cid-y4rsztkj>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <span class="font-bold" style="color: #00e676;" data-astro-cid-y4rsztkj>S2E04</span>
+      </div>
+      <div class="flex-1 min-w-[200px]" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S02E04_toll_roads_and_trade_winds/" class="text-lg" style="color: #e8e8f0;" data-astro-cid-y4rsztkj>toll roads and trade winds</a>
+      </div>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S02E04_toll_roads_and_trade_winds/" class="text-sm transition-colors" style="color: #00d4ff;" data-astro-cid-y4rsztkj>
+[ACCESS]
+</a>
+      </div>
+    </div>
+  </article>
+  <article class="rounded-lg p-4 transition-all" style="background: rgba(18, 18, 25, 0.3); border: 1px solid #2a2a3a;" data-astro-cid-y4rsztkj>
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-2" data-astro-cid-y4rsztkj>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <span class="font-bold" style="color: #00e676;" data-astro-cid-y4rsztkj>S2E05</span>
+      </div>
+      <div class="flex-1 min-w-[200px]" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S02E05_wreckage_and_will/" class="text-lg" style="color: #e8e8f0;" data-astro-cid-y4rsztkj>wreckage and will</a>
+      </div>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S02E05_wreckage_and_will/" class="text-sm transition-colors" style="color: #00d4ff;" data-astro-cid-y4rsztkj>
+[ACCESS]
+</a>
+      </div>
+    </div>
+  </article>
+  <article class="rounded-lg p-4 transition-all" style="background: rgba(18, 18, 25, 0.3); border: 1px solid #2a2a3a;" data-astro-cid-y4rsztkj>
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-2" data-astro-cid-y4rsztkj>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <span class="font-bold" style="color: #00e676;" data-astro-cid-y4rsztkj>S2E06</span>
+      </div>
+      <div class="flex-1 min-w-[200px]" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S02E06_the_notebooks_echo/" class="text-lg" style="color: #e8e8f0;" data-astro-cid-y4rsztkj>the notebooks echo</a>
+      </div>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S02E06_the_notebooks_echo/" class="text-sm transition-colors" style="color: #00d4ff;" data-astro-cid-y4rsztkj>
+[ACCESS]
+</a>
+      </div>
+    </div>
+  </article>
+  <article class="rounded-lg p-4 transition-all" style="background: rgba(18, 18, 25, 0.3); border: 1px solid #2a2a3a;" data-astro-cid-y4rsztkj>
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-2" data-astro-cid-y4rsztkj>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <span class="font-bold" style="color: #00e676;" data-astro-cid-y4rsztkj>S2E07</span>
+      </div>
+      <div class="flex-1 min-w-[200px]" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S02E07_the_boneyard_of_beautiful_things/" class="text-lg" style="color: #e8e8f0;" data-astro-cid-y4rsztkj>the boneyard of beautiful things</a>
+      </div>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S02E07_the_boneyard_of_beautiful_things/" class="text-sm transition-colors" style="color: #00d4ff;" data-astro-cid-y4rsztkj>
+[ACCESS]
+</a>
+      </div>
+    </div>
+  </article>
+  <article class="rounded-lg p-4 transition-all" style="background: rgba(18, 18, 25, 0.3); border: 1px solid #2a2a3a;" data-astro-cid-y4rsztkj>
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-2" data-astro-cid-y4rsztkj>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <span class="font-bold" style="color: #00e676;" data-astro-cid-y4rsztkj>S2E08</span>
+      </div>
+      <div class="flex-1 min-w-[200px]" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S02E08_signal_crossings/" class="text-lg" style="color: #e8e8f0;" data-astro-cid-y4rsztkj>signal crossings</a>
+      </div>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S02E08_signal_crossings/" class="text-sm transition-colors" style="color: #00d4ff;" data-astro-cid-y4rsztkj>
+[ACCESS]
+</a>
+      </div>
+    </div>
+  </article>
+  <article class="rounded-lg p-4 transition-all" style="background: rgba(18, 18, 25, 0.3); border: 1px solid #2a2a3a;" data-astro-cid-y4rsztkj>
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-2" data-astro-cid-y4rsztkj>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <span class="font-bold" style="color: #00e676;" data-astro-cid-y4rsztkj>S2E09</span>
+      </div>
+      <div class="flex-1 min-w-[200px]" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S02E09_clives_coordinates/" class="text-lg" style="color: #e8e8f0;" data-astro-cid-y4rsztkj>clives coordinates</a>
+      </div>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S02E09_clives_coordinates/" class="text-sm transition-colors" style="color: #00d4ff;" data-astro-cid-y4rsztkj>
+[ACCESS]
+</a>
+      </div>
+    </div>
+  </article>
+  <article class="rounded-lg p-4 transition-all" style="background: rgba(18, 18, 25, 0.3); border: 1px solid #2a2a3a;" data-astro-cid-y4rsztkj>
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-2" data-astro-cid-y4rsztkj>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <span class="font-bold" style="color: #00e676;" data-astro-cid-y4rsztkj>S2E10</span>
+      </div>
+      <div class="flex-1 min-w-[200px]" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S02E10_the_frequency_and_the_future/" class="text-lg" style="color: #e8e8f0;" data-astro-cid-y4rsztkj>the frequency and the future</a>
+      </div>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S02E10_the_frequency_and_the_future/" class="text-sm transition-colors" style="color: #00d4ff;" data-astro-cid-y4rsztkj>
+[ACCESS]
+</a>
+      </div>
+    </div>
+  </article>
+  </div>
+ </section>
+ <section class="season-archive mb-12" aria-label="SEASON 3" data-astro-cid-y4rsztkj>
+  <div class="flex items-center gap-4 mb-6" data-astro-cid-y4rsztkj>
+    <h2 class="text-2xl tracking-wider" style="color: #00d4ff;" data-astro-cid-y4rsztkj>SEASON 3</h2>
+    <div class="flex-1 h-px" style="background: #2a2a3a;" data-astro-cid-y4rsztkj></div>
+    <span class="text-sm" style="color: #9090b0;" data-astro-cid-y4rsztkj>10 transmissions</span>
+  </div>
+  <div class="grid gap-3" data-astro-cid-y4rsztkj>
+
+  <article class="rounded-lg p-4 transition-all" style="background: rgba(18, 18, 25, 0.3); border: 1px solid #2a2a3a;" data-astro-cid-y4rsztkj>
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-2" data-astro-cid-y4rsztkj>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <span class="font-bold" style="color: #00e676;" data-astro-cid-y4rsztkj>S3E01</span>
+      </div>
+      <div class="flex-1 min-w-[200px]" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S03E01_where_the_frequencies_have_no_name/" class="text-lg" style="color: #e8e8f0;" data-astro-cid-y4rsztkj>where the frequencies have no name</a>
+      </div>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S03E01_where_the_frequencies_have_no_name/" class="text-sm transition-colors" style="color: #00d4ff;" data-astro-cid-y4rsztkj>
+[ACCESS]
+</a>
+      </div>
+    </div>
+  </article>
+  <article class="rounded-lg p-4 transition-all" style="background: rgba(18, 18, 25, 0.3); border: 1px solid #2a2a3a;" data-astro-cid-y4rsztkj>
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-2" data-astro-cid-y4rsztkj>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <span class="font-bold" style="color: #00e676;" data-astro-cid-y4rsztkj>S3E02</span>
+      </div>
+      <div class="flex-1 min-w-[200px]" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S03E02_the_boneyard_of_beautiful_things/" class="text-lg" style="color: #e8e8f0;" data-astro-cid-y4rsztkj>the boneyard of beautiful things</a>
+      </div>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S03E02_the_boneyard_of_beautiful_things/" class="text-sm transition-colors" style="color: #00d4ff;" data-astro-cid-y4rsztkj>
+[ACCESS]
+</a>
+      </div>
+    </div>
+  </article>
+  <article class="rounded-lg p-4 transition-all" style="background: rgba(18, 18, 25, 0.3); border: 1px solid #2a2a3a;" data-astro-cid-y4rsztkj>
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-2" data-astro-cid-y4rsztkj>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <span class="font-bold" style="color: #00e676;" data-astro-cid-y4rsztkj>S3E03</span>
+      </div>
+      <div class="flex-1 min-w-[200px]" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S03E03_the_threshold/" class="text-lg" style="color: #e8e8f0;" data-astro-cid-y4rsztkj>the threshold</a>
+      </div>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S03E03_the_threshold/" class="text-sm transition-colors" style="color: #00d4ff;" data-astro-cid-y4rsztkj>
+[ACCESS]
+</a>
+      </div>
+    </div>
+  </article>
+  <article class="rounded-lg p-4 transition-all" style="background: rgba(18, 18, 25, 0.3); border: 1px solid #2a2a3a;" data-astro-cid-y4rsztkj>
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-2" data-astro-cid-y4rsztkj>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <span class="font-bold" style="color: #00e676;" data-astro-cid-y4rsztkj>S3E04</span>
+      </div>
+      <div class="flex-1 min-w-[200px]" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S03E04_the_day_that_loved_itself_to_death/" class="text-lg" style="color: #e8e8f0;" data-astro-cid-y4rsztkj>the day that loved itself to death</a>
+      </div>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S03E04_the_day_that_loved_itself_to_death/" class="text-sm transition-colors" style="color: #00d4ff;" data-astro-cid-y4rsztkj>
+[ACCESS]
+</a>
+      </div>
+    </div>
+  </article>
+  <article class="rounded-lg p-4 transition-all" style="background: rgba(18, 18, 25, 0.3); border: 1px solid #2a2a3a;" data-astro-cid-y4rsztkj>
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-2" data-astro-cid-y4rsztkj>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <span class="font-bold" style="color: #00e676;" data-astro-cid-y4rsztkj>S3E05</span>
+      </div>
+      <div class="flex-1 min-w-[200px]" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S03E05_the_loudest_thing_in_the_room_is_nothing/" class="text-lg" style="color: #e8e8f0;" data-astro-cid-y4rsztkj>the loudest thing in the room is nothing</a>
+      </div>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S03E05_the_loudest_thing_in_the_room_is_nothing/" class="text-sm transition-colors" style="color: #00d4ff;" data-astro-cid-y4rsztkj>
+[ACCESS]
+</a>
+      </div>
+    </div>
+  </article>
+  <article class="rounded-lg p-4 transition-all" style="background: rgba(18, 18, 25, 0.3); border: 1px solid #2a2a3a;" data-astro-cid-y4rsztkj>
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-2" data-astro-cid-y4rsztkj>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <span class="font-bold" style="color: #00e676;" data-astro-cid-y4rsztkj>S3E06</span>
+      </div>
+      <div class="flex-1 min-w-[200px]" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S03E06_my_brother_the_broadcast/" class="text-lg" style="color: #e8e8f0;" data-astro-cid-y4rsztkj>my brother the broadcast</a>
+      </div>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S03E06_my_brother_the_broadcast/" class="text-sm transition-colors" style="color: #00d4ff;" data-astro-cid-y4rsztkj>
+[ACCESS]
+</a>
+      </div>
+    </div>
+  </article>
+  <article class="rounded-lg p-4 transition-all" style="background: rgba(18, 18, 25, 0.3); border: 1px solid #2a2a3a;" data-astro-cid-y4rsztkj>
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-2" data-astro-cid-y4rsztkj>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <span class="font-bold" style="color: #00e676;" data-astro-cid-y4rsztkj>S3E07</span>
+      </div>
+      <div class="flex-1 min-w-[200px]" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S03E07_every_ship_that_ever_sailed_this_far/" class="text-lg" style="color: #e8e8f0;" data-astro-cid-y4rsztkj>every ship that ever sailed this far</a>
+      </div>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S03E07_every_ship_that_ever_sailed_this_far/" class="text-sm transition-colors" style="color: #00d4ff;" data-astro-cid-y4rsztkj>
+[ACCESS]
+</a>
+      </div>
+    </div>
+  </article>
+  <article class="rounded-lg p-4 transition-all" style="background: rgba(18, 18, 25, 0.3); border: 1px solid #2a2a3a;" data-astro-cid-y4rsztkj>
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-2" data-astro-cid-y4rsztkj>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <span class="font-bold" style="color: #00e676;" data-astro-cid-y4rsztkj>S3E08</span>
+      </div>
+      <div class="flex-1 min-w-[200px]" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S03E08_the_atlas_opens/" class="text-lg" style="color: #e8e8f0;" data-astro-cid-y4rsztkj>the atlas opens</a>
+      </div>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S03E08_the_atlas_opens/" class="text-sm transition-colors" style="color: #00d4ff;" data-astro-cid-y4rsztkj>
+[ACCESS]
+</a>
+      </div>
+    </div>
+  </article>
+  <article class="rounded-lg p-4 transition-all" style="background: rgba(18, 18, 25, 0.3); border: 1px solid #2a2a3a;" data-astro-cid-y4rsztkj>
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-2" data-astro-cid-y4rsztkj>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <span class="font-bold" style="color: #00e676;" data-astro-cid-y4rsztkj>S3E09</span>
+      </div>
+      <div class="flex-1 min-w-[200px]" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S03E09_took_you_long_enough/" class="text-lg" style="color: #e8e8f0;" data-astro-cid-y4rsztkj>took you long enough</a>
+      </div>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S03E09_took_you_long_enough/" class="text-sm transition-colors" style="color: #00d4ff;" data-astro-cid-y4rsztkj>
+[ACCESS]
+</a>
+      </div>
+    </div>
+  </article>
+  <article class="rounded-lg p-4 transition-all" style="background: rgba(18, 18, 25, 0.3); border: 1px solid #2a2a3a;" data-astro-cid-y4rsztkj>
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-2" data-astro-cid-y4rsztkj>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <span class="font-bold" style="color: #00e676;" data-astro-cid-y4rsztkj>S3E10</span>
+      </div>
+      <div class="flex-1 min-w-[200px]" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S03E10_the_signal_was_us_all_along/" class="text-lg" style="color: #e8e8f0;" data-astro-cid-y4rsztkj>the signal was us all along</a>
+      </div>
+      <div class="flex items-center gap-3" data-astro-cid-y4rsztkj>
+        <a href="/transmissions/S03E10_the_signal_was_us_all_along/" class="text-sm transition-colors" style="color: #00d4ff;" data-astro-cid-y4rsztkj>
+[ACCESS]
+</a>
+      </div>
+    </div>
+  </article>
+  </div>
+ </section><!-- Footer --> <footer class="mt-16 pt-8" style="border-top: 1px solid #2a2a3a;" data-astro-cid-y4rsztkj> <div class="flex flex-wrap gap-4 text-xs" style="color: #9090b0;" data-astro-cid-y4rsztkj> <span style="color: #00e676;" data-astro-cid-y4rsztkj> ARCHIVE ONLINE</span> <span data-astro-cid-y4rsztkj>|</span> <span data-astro-cid-y4rsztkj>TOTAL TRANSMISSIONS: 37</span> <span data-astro-cid-y4rsztkj>|</span> <span data-astro-cid-y4rsztkj>STORAGE: NOMINAL</span> </div> </footer> </main> </div>  </main> <script type="module">(function(){if(!window.matchMedia("(pointer: coarse)").matches){var t=document.getElementById("cursor-dot");t&&(document.addEventListener("mousemove",function(e){t.style.transform="translate("+e.clientX+"px, "+e.clientY+"px)"}),document.querySelectorAll('a, button, [role="button"], input, textarea, select').forEach(function(e){e.addEventListener("mouseenter",function(){t.classList.add("cursor-hover")}),e.addEventListener("mouseleave",function(){t.classList.remove("cursor-hover")})}))}})();</script> </body> </html> 
