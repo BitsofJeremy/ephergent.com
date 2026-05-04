@@ -306,6 +306,26 @@ body.terminal-active .terminal-hide {
   display: none !important;
 }
 
+/* ── Reduced Motion ───────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .line {
+    animation: none !important;
+  }
+  .l-boot,
+  .l-flicker,
+  .l-typing {
+    animation: none !important;
+  }
+  .l-prompt,
+  .l-header,
+  .l-warmth {
+    animation: none !important;
+  }
+  #boot-container {
+    animation: none !important;
+  }
+}
+
 /* ── Responsive ──────────────────────────────────────── */
 @media (max-width: 640px) {
   #terminal-output {

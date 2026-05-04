@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-05-04T22:57:07Z",
+  "title": "Design System: ephergent.com",
+  "extensions": {
+    "colorMeta": {
+      "phosphor-amber":  { "role": "primary",   "displayName": "Phosphor Amber",  "canonical": "#ffb020", "tonalRamp": ["#1a1200", "#2a1f00", "#3a2d00", "#4a3c00", "#5a4b00", "#6a5b00", "#7a6a00", "#ffb020"] },
+      "station-cyan":    { "role": "primary",   "displayName": "Station Cyan",    "canonical": "#00d4ff", "tonalRamp": ["#001a20", "#002a30", "#003a40", "#004a50", "#005a60", "#006a70", "#007a80", "#00d4ff"] },
+      "status-green":    { "role": "secondary", "displayName": "Status Green",    "canonical": "#00e676", "tonalRamp": ["#001a10", "#002a18", "#003a20", "#004a28", "#005a30", "#006a38", "#007a40", "#00e676"] },
+      "alert-red":       { "role": "secondary", "displayName": "Alert Red",       "canonical": "#ff4444", "tonalRamp": ["#1a0000", "#2a0808", "#3a1010", "#4a1818", "#5a2020", "#6a2828", "#7a3030", "#ff4444"] },
+      "void-ink":        { "role": "neutral",   "displayName": "Void Ink",        "canonical": "#08080d", "tonalRamp": ["#08080d", "#0d0d15", "#121219", "#1a1a24", "#222230", "#2a2a3a", "#3a3a50", "#4a4a60"] },
+      "terminal-bg":     { "role": "neutral",   "displayName": "Terminal BG",     "canonical": "#121219" },
+      "border-subtle":   { "role": "neutral",   "displayName": "Border Subtle",   "canonical": "#2a2a3a" },
+      "text-primary":    { "role": "neutral",   "displayName": "Text Primary",    "canonical": "#e8e8f0" },
+      "text-secondary":  { "role": "neutral",   "displayName": "Text Secondary",  "canonical": "#9090b0" }
+    },
+    "typographyMeta": {
+      "display":  { "displayName": "Display",  "purpose": "Page titles, episode names, major section headers. Space Grotesk at clamp(2.25rem, 5vw, 3.75rem)." },
+      "headline": { "displayName": "Headline", "purpose": "Card titles, crew names, lore entry headings. Space Grotesk at 1.875rem." },
+      "title":    { "displayName": "Title",    "purpose": "Subsection headers, navigation labels. Space Grotesk at 1.25rem." },
+      "body":     { "displayName": "Body",     "purpose": "Episode descriptions, lore text, crew bios. Inter at 1rem, max 72ch line length." },
+      "mono":     { "displayName": "Mono",     "purpose": "Station-generated content only: boot sequences, status logs, terminal output. JetBrains Mono." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "ease-standard",     "value": "cubic-bezier(0.4, 0, 0.2, 1)",                   "purpose": "Default for color and opacity transitions." },
+      { "name": "ease-spring",       "value": "cubic-bezier(0.16, 1, 0.3, 1)",                 "purpose": "Mobile menu slide-in/out." },
+      { "name": "ease-terminal",     "value": "ease-out",                                         "purpose": "Text float-in animations in terminal output." },
+      { "name": "duration-fast",      "value": "150ms",                                            "purpose": "Micro-interactions: hover color shifts." },
+      { "name": "duration-standard",  "value": "300ms",                                            "purpose": "State transitions: borders, backgrounds, transforms." }
+    ],
+    "breakpoints": [
+      { "name": "sm",  "value": "640px" },
+      { "name": "md",  "value": "768px" },
+      { "name": "lg",  "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Nav Link",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Desktop navigation links in the fixed header.",
+      "html": "<a href=\"/games/\" class=\"ds-nav-link\">Games</a>",
+      "css": ".ds-nav-link { font-family: 'Inter', system-ui, sans-serif; font-size: 0.875rem; font-weight: 500; color: #9090b0; transition: color 0.3s ease; text-decoration: none; } .ds-nav-link:hover { color: #00d4ff; } .ds-nav-link:focus-visible { outline: 2px solid #00d4ff; outline-offset: 2px; border-radius: 4px; }"
+    },
+    {
+      "name": "Nav Terminal Button",
+      "kind": "nav",
+      "refersTo": "nav-terminal-btn",
+      "description": "The amber STATION TERMINAL CTA in the nav bar.",
+      "html": "<a href=\"/terminal/\" id=\"terminal-nav-btn\" class=\"ds-nav-terminal\">STATION TERMINAL</a>",
+      "css": ".ds-nav-terminal { font-size: 0.875rem; font-weight: 500; color: #ffb020; border: 1px solid #2a2a3a; padding: 0.375rem 0.75rem; border-radius: 4px; transition: all 0.3s ease; text-decoration: none; } .ds-nav-terminal:hover { color: #00d4ff; border-color: #00d4ff; }"
+    },
+    {
+      "name": "Crew Card",
+      "kind": "card",
+      "refersTo": "card-crew",
+      "description": "Character profile card on the crew manifest page.",
+      "html": "<article class=\"ds-card-crew\"><div class=\"ds-card-accent-bar\"></div><img src=\"/assets/images/generated/crew-pixel-portrait.png\" alt=\"Pixel Paradox\" width=\"48\" height=\"48\"><h2>Pixel Paradox</h2><p class=\"ds-card-role\">Captain</p><blockquote>\"Quote text.\"</blockquote><a href=\"/crew/pixel-paradox/\">[VIEW FILE]</a></article>",
+      "css": ".ds-card-crew { background: rgba(18, 18, 25, 0.3); border: 1px solid #2a2a3a; border-radius: 12px; padding: 1.5rem; transition: border-color 0.3s ease, transform 0.3s ease; } .ds-card-crew:hover { border-color: #00d4ff; transform: translateY(-2px); } .ds-card-accent-bar { height: 4px; border-radius: 2px 2px 0 0; margin-bottom: 1rem; background-color: #00d4ff; } .ds-card-role { color: #00d4ff; font-size: 0.875rem; margin-bottom: 0.75rem; } .ds-card-crew blockquote { border-left: 2px solid rgba(255, 176, 32, 0.5); padding-left: 0.75rem; font-style: italic; color: #9090b0; font-size: 0.875rem; margin: 0.75rem 0; } .ds-card-crew a { color: #00d4ff; font-size: 0.875rem; margin-top: 1rem; display: inline-block; text-decoration: none; } .ds-card-crew a:hover { opacity: 0.8; }"
+    },
+    {
+      "name": "Lore Card",
+      "kind": "card",
+      "refersTo": "card-lore",
+      "description": "Lore entry card on the Atlas page with spoiler chip support.",
+      "html": "<article class=\"ds-card-lore\"><h3>The Drift</h3><p>Description text.</p><div class=\"ds-lore-chips\"><span class=\"ds-chip-tag\">entropy</span></div></article>",
+      "css": ".ds-card-lore { background: rgba(18, 18, 25, 0.4); border: 1px solid #2a2a3a; border-radius: 12px; padding: 1rem; transition: border-color 0.2s ease, transform 0.2s ease; } .ds-card-lore:hover { border-color: #00d4ff; transform: translateY(-2px); } .ds-card-lore h3 { color: #e8e8f0; font-size: 1.125rem; font-weight: 700; margin-bottom: 0.5rem; } .ds-card-lore p { color: #9090b0; font-size: 0.875rem; line-height: 1.5; margin-bottom: 0.75rem; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "btn-ghost",
+      "description": "Secondary button with border and no fill.",
+      "html": "<a href=\"/transmissions/S01E01/\" class=\"ds-btn-ghost\">ACCESS TRANSMISSION</a>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; gap: 0.5rem; background: transparent; border: 1px solid #2a2a3a; color: #e8e8f0; font-size: 0.875rem; font-weight: 500; padding: 0.5rem 1rem; border-radius: 4px; text-decoration: none; transition: all 0.3s ease; } .ds-btn-ghost:hover { border-color: #00d4ff; color: #00d4ff; } .ds-btn-ghost:focus-visible { outline: 2px solid #00d4ff; outline-offset: 2px; }"
+    },
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "btn-primary",
+      "description": "Primary action button with solid cyan fill.",
+      "html": "<button class=\"ds-btn-primary\">BEGIN</button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: #00d4ff; color: #08080d; font-weight: 600; font-size: 0.875rem; padding: 0.5rem 1rem; border-radius: 4px; border: none; cursor: pointer; transition: background 0.3s ease, color 0.3s ease; } .ds-btn-primary:hover { background: #e040fb; color: #ffffff; } .ds-btn-primary:focus-visible { outline: 2px solid #00d4ff; outline-offset: 2px; }"
+    },
+    {
+      "name": "Chip Tag",
+      "kind": "chip",
+      "refersTo": "chip-tag",
+      "description": "Spoiler-level tags and lore taxonomy chips.",
+      "html": "<span class=\"ds-chip-tag\">entropy</span>",
+      "css": ".ds-chip-tag { background: rgba(0, 212, 255, 0.1); color: #00d4ff; font-size: 0.75rem; padding: 0.125rem 0.5rem; border-radius: 4px; }"
+    },
+    {
+      "name": "Scanline Overlay",
+      "kind": "custom",
+      "refersTo": "scanlines",
+      "description": "CRT scanline effect applied to terminal pages. Non-interactive fixed overlay.",
+      "html": "<div class=\"ds-scanlines\" aria-hidden=\"true\"></div>",
+      "css": ".ds-scanlines { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1000; background: repeating-linear-gradient(0deg, rgba(0,0,0,0.15) 0px, rgba(0,0,0,0.15) 1px, transparent 1px, transparent 2px); }"
+    },
+    {
+      "name": "Mobile Menu",
+      "kind": "nav",
+      "refersTo": "mobile-menu",
+      "description": "Slide-in mobile navigation panel with staggered link reveals.",
+      "html": "<nav id=\"mobile-menu\" class=\"ds-mobile-menu\"><a href=\"/games/\" class=\"ds-mobile-link\">Games</a><a href=\"/transmissions/\" class=\"ds-mobile-link\">Transmissions</a></nav>",
+      "css": ".ds-mobile-menu { position: fixed; top: 0; right: 0; width: 75%; max-width: 320px; height: 100%; background: rgba(8, 8, 13, 0.95); backdrop-filter: blur(24px); z-index: 999; transform: translateX(100%); transition: transform 0.3s cubic-bezier(0.16,1,0.3,1); flex-direction: column; padding: 5rem 2rem 2rem; display: flex; gap: 1.5rem; } .ds-mobile-menu.open { transform: translateX(0); } .ds-mobile-link { color: rgba(232, 232, 240, 0.8); font-size: 1.125rem; text-decoration: none; opacity: 0; transform: translate(20px); transition: all 0.3s ease; } .ds-mobile-menu.open .ds-mobile-link { opacity: 1; transform: translate(0); } .ds-mobile-menu.open .ds-mobile-link:nth-child(1) { transition-delay: 80ms; } .ds-mobile-menu.open .ds-mobile-link:nth-child(2) { transition-delay: 160ms; } .ds-mobile-menu.open .ds-mobile-link:nth-child(3) { transition-delay: 240ms; } .ds-mobile-menu.open .ds-mobile-link:nth-child(4) { transition-delay: 320ms; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Frequency Archive",
+    "overview": "Ephergent.com is a living broadcast log from a station that has been transmitting for 800 years into an ocean of impossible light. The interface feels like equipment running past its intended lifespan, still functional, still reaching outward. A deep-space radio telescope crossed with an IBM 3270 mainframe. Not sleek, not corporate, not futuristic in the generic sense. Amber carries warmth (station voice); cyan carries interactivity (signal). The dual-accent phosphor palette is not decorative — it reflects two frequencies.",
+    "keyCharacteristics": [
+      "Deep-space CRT phosphor aesthetic with purposeful dual-accent color system",
+      "No shadows at rest; depth through tonal layering and colored borders",
+      "Terminal-inspired typography (JetBrains Mono for output, Space Grotesk for display, Inter for body)",
+      "Atmospheric status messaging in footers and boot sequences reinforces world-building",
+      "Flat system: hover states use border color shifts and subtle translate transforms, not shadows"
+    ],
+    "rules": [
+      { "name": "The Dual Frequency Rule", "body": "Amber marks the station's voice (labels, headers, status). Cyan marks the user's voice (links, interactive, signal). They never swap roles.", "section": "colors" },
+      { "name": "The Near-Black Background Rule", "body": "The primary surface is #08080d, not #000. Tint every neutral toward the brand hue by 0.005-0.01 chroma. No pure blacks.", "section": "colors" },
+      { "name": "The Scale Ratio Rule", "body": "Display-to-headline ratio is approximately 2:1. Never use a flat scale where every heading is the same weight and size. Hierarchy is earned.", "section": "typography" },
+      { "name": "The Mono Voice Rule", "body": "JetBrains Mono is reserved for station-generated content (boot sequences, status logs, terminal output). It is not used decoratively on body text or for general UI labels.", "section": "typography" },
+      { "name": "The Flat-By-Default Rule", "body": "Surfaces are flat at rest. Borders and background color shifts replace shadows as the depth signal.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do use the dual-accent system: amber for station voice, cyan for user voice",
+      "Do apply scanlines as a fixed-position pseudo-element with pointer-events: none",
+      "Do use status-green (#00e676) only for confirmation states: [OK] markers, online indicators",
+      "Do use JetBrains Mono exclusively for station-generated content",
+      "Do use rgba(18, 18, 25, 0.3) as crew card surface with 4px colored accent top border per crew character",
+      "Do use backdrop-blur-xl on mobile menu and backdrop-blur-sm on fixed header"
+    ],
+    "donts": [
+      "Don't use pure black (#000) or pure white (#fff) anywhere",
+      "Don't use border-left greater than 1px as a colored accent stripe",
+      "Don't use background-clip: text with gradient backgrounds for decorative text",
+      "Don't use glassmorphism as a decorative card treatment",
+      "Don't use the hero-metric template (big number + small label + gradient accent)",
+      "Don't use identical card grids with no differentiation",
+      "Don't use modals as a first solution",
+      "Don't use generic sci-fi color palettes (dark blue + neon green, purple gradients on black)",
+      "Don't use em dashes in UI copy"
+    ]
+  }
+}
