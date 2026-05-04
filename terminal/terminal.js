@@ -393,6 +393,37 @@
     addBlank(0);
   }
 
+  // ── Hello / Orientation Command ───────────────────────────
+  function cmdHello() {
+    addBlank(0);
+    printLines([
+      'Welcome to the Ephergent.',
+      '',
+      'This is a space station that has been broadcasting',
+      'for 800 years. The crew is still here.',
+      'The signal is still going.',
+      '',
+      'You have arrived at a frequency.',
+      'What you do with it is yours.',
+      '',
+      'QUICK START:',
+      '  HELP        — see all commands',
+      '  LIST FREQ   — see every transmission',
+      '  TUNE 1047   — start from the beginning',
+      '  DIAL        — let the station choose for you',
+      '  ATLAS       — pull a random lore entry',
+      '',
+      'The crew:',
+      '  Pixel Paradox  — the Drifter, our lead',
+      '  A1             — the navigator (also coffee)',
+      '  Clive          — companion unit, speaks in haiku',
+      '  Mochi          — The Keeper. Warm. Always.',
+      '',
+      'Type HELP to begin.',
+    ], 'l-dim', 0);
+    addBlank(0);
+  }
+
   // ── About Command ─────────────────────────────────────────
   function cmdAbout() {
     addBlank(0);
@@ -653,6 +684,11 @@
     const args = parts.slice(1).join(' ');
 
     switch (cmd) {
+      case 'HELLO':
+      case 'ABOUT':
+      case 'ORIENT':
+        cmdHello();
+        break;
       case 'HELP':
         cmdHelp();
         break;
